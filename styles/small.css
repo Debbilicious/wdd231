@@ -1,0 +1,467 @@
+/* ========== ROOT VARIABLES ========== */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #34495e;
+    --accent-color: #3498db;
+    --accent-compliant-color: #2970a6;
+    --completed-color-compliant: #415A77;
+    --completed-color: #27ae60;
+    --text-light: #ecf0f1;
+    --text-dark: #2c3e50;
+    --bg-light: #f8f9fa;
+    --bg-card: #ffffff;
+    --border-color: #bdc3c7;
+    --hover-color: #1abc9c;
+
+    /* Centralized accessible color tokens */
+    --accent-high-contrast: #003366;
+    --accent-high-contrast-hover: #003366;
+    --accent-high-contrast-text: #ffffff;
+    --total-credits-color: #0b2b63;
+    --completed-text-color: #ffffff;
+    --focus-outline: rgba(11, 95, 255, 0.24);
+}
+
+/* ========== GLOBAL STYLES ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--bg-light);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ========== HEADER STYLES ========== */
+header {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    filter: brightness(0) invert(1);
+}
+
+.site-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+/* Hamburger Button */
+#menu-toggle {
+    background: none;
+    border: none;
+    color: var(--text-light);
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+    transition: color 0.3s ease;
+}
+
+#menu-toggle:hover {
+    color: var(--hover-color);
+}
+
+/* ========== NAVIGATION STYLES ========== */
+nav {
+    background-color: var(--secondary-color);
+    display: none;
+}
+
+nav.open {
+    display: block;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+nav a {
+    display: block;
+    color: var(--text-light);
+    text-decoration: none;
+    padding: 1rem 1.5rem;
+    transition: background-color 0.3s ease, padding-left 0.3s ease;
+}
+
+nav a:hover {
+    background-color: var(--hover-color);
+    padding-left: 2rem;
+}
+
+nav a.active {
+    background-color: var(--accent-compliant-color);
+    font-weight: 700;
+}
+
+/* ========== MAIN CONTENT ========== */
+main {
+    flex: 1;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1.5rem 1rem;
+}
+
+h1 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid var(--accent-compliant-color);
+}
+
+h2 {
+    font-size: 1.5rem;
+    color: var(--text-light);
+    background-color: var(--primary-color);
+    padding: 0.75rem 1rem;
+    margin: 0 0 1rem 0;
+    text-align: center;
+}
+
+/* ========== CARD STYLES ========== */
+.card {
+    background-color: var(--bg-card);
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.card > *:not(h2) {
+    padding: 0 1rem;
+}
+
+.card p {
+    padding: 1rem;
+    text-align: justify;
+}
+
+/* About Me Section */
+.about-me p {
+    line-height: 1.8;
+}
+
+/* Student Photo Section */
+.student-photo img {
+    width: 100%;
+    padding: 1rem;
+}
+
+/* ========== COURSES SECTION ========== */
+.courses-section {
+    padding-bottom: 1rem;
+}
+
+/* Course Filter Buttons */
+.course-filters {
+    display: flex;
+    gap: 0.5rem;
+    padding: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.course-filters button {
+    flex: 1;
+    min-width: 80px;
+    padding: 0.75rem 1rem;
+    border: 2px solid var(--accent-high-contrast);
+    background-color: transparent;
+    color: var(--accent-high-contrast);
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.15s ease;
+}
+
+.course-filters button:hover {
+    background-color: var(--accent-high-contrast);
+    color: var(--accent-high-contrast-text);
+    border-color: var(--accent-high-contrast);
+}
+
+.course-filters button.active {
+    background-color: var(--accent-high-contrast);
+    color: var(--accent-high-contrast-text);
+    border-color: var(--accent-high-contrast);
+}
+
+/* Make the courses-section title match other section titles (About Me / Student Photo) */
+.courses-section h2 {
+    color: var(--text-light);
+    background-color: var(--primary-color);
+    padding: 0.75rem 1rem;
+    margin: 0 0 1rem 0;
+    text-align: center;
+}
+
+/* High-contrast override for the specific "All" filter button to satisfy WCAG */
+button#filter-all.active {
+    background-color: #003366; /* darker accent for strong contrast */
+    color: var(--accent-high-contrast-text); /* white text ensures high contrast */
+    border-color: #E0E1DD;
+}
+
+button#filter-all:hover {
+    background-color: #003366;
+    color: var(--accent-high-contrast-text);
+}
+
+/* Visible focus ring for keyboard users */
+button#filter-all:focus,
+button#filter-all.active:focus,
+.course-filters button:focus {
+    outline: 3px solid var(--focus-outline);
+    outline-offset: 2px;
+}
+
+/* Course List Container */
+.course-list-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    padding: 0 1rem 1rem 1rem;
+}
+
+/* Individual Course Cards */
+.course-card {
+    background-color: var(--bg-light);
+    border: 2px solid var(--border-color);
+    padding: 1rem;
+    text-align: center;
+    font-weight: 700;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.course-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Make non-completed course titles use the same blue as the 'All' button */
+.course-card h3 {
+    color: var(--accent-high-contrast);
+    margin: 0 0 0.25rem 0;
+    font-size: 1rem;
+}
+
+/* Ensure completed cards keep readable title color */
+.course-card.completed h3 {
+    color: var(--completed-text-color);
+}
+
+/* Completed Course Styling */
+.course-card.completed {
+    background-color: var(--completed-color-compliant);
+    color: var(--completed-text-color);
+    border-color: var(--completed-color-compliant);
+}
+
+/* Ensure all textual children inside a completed card are also high-contrast */
+.course-card.completed h3,
+.course-card.completed p,
+.course-card.completed span,
+.course-card.completed a {
+    color: var(--completed-text-color);
+}
+
+/* Credit Total */
+.credit-total {
+    text-align: center;
+    font-size: 0.95rem;
+    margin-top: 1rem;
+    padding: 1rem;
+    font-weight: 400;
+}
+
+#total-credits {
+    font-weight: 700;
+    color: var(--total-credits-color);
+    font-size: 1.1rem;
+}
+
+/* ========== FOOTER STYLES ========== */
+footer {
+    background-color: transparent;
+    padding: 1.5rem 1rem 0 1rem;
+    text-align: center;
+    margin-top: auto;
+}
+
+/* Social Media Links */
+.social {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+    padding: 1rem 0;
+    background-color: transparent;
+}
+
+.social a {
+    display: inline-block;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.social a:hover {
+    transform: scale(1.2);
+    opacity: 0.8;
+}
+
+.social img {
+    width: 32px;
+    height: 32px;
+    filter: brightness(0) saturate(100%);
+}
+
+/* Footer text section with dark background */
+footer > p {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    margin: 0;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+}
+
+#lastModified {
+    font-size: 0.9rem;
+    font-style: italic;
+    color: #eee;
+}
+
+/* ==========================================
+   MODAL STYLES (for course details)
+   ========================================== */
+
+.modal-overlay {
+    display: none; 
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    padding: 1rem;
+}
+
+.modal-overlay.open {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: var(--bg-card);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    max-width: 90%;
+    width: 500px;
+    color: var(--text-dark);
+    transform: scale(0.95);
+    opacity: 0;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+.modal-overlay.open .modal-content {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: var(--primary-color);
+    font-size: 30px;
+    font-weight: bold;
+    background: none;
+    border: none;
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.2s;
+}
+
+.modal-close-btn:hover {
+    color: var(--hover-color);
+}
+
+.modal-title {
+    color: var(--accent-compliant-color);
+    font-size: 1.8rem;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.modal-course-code {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.modal-detail {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.modal-description-box {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--bg-light);
+}
+
+.modal-description-box h4 {
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.modal-description-box p {
+    text-align: left;
+    padding: 0;
+    line-height: 1.5;
+}

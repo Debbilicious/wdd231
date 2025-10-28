@@ -1,0 +1,272 @@
+@media (min-width: 640px) {
+    
+    /* ========== HEADER ADJUSTMENTS ========== */
+    header {
+        padding: 1rem 2rem;
+    }
+
+    .logo {
+        width: 50px;
+        height: 50px;
+    }
+
+    .site-name {
+        font-size: 1.5rem;
+    }
+
+    /* Hide hamburger on larger screens */
+    #menu-toggle {
+        display: none;
+    }
+
+    /* ========== NAVIGATION - HORIZONTAL LAYOUT ========== */
+    nav {
+        display: block !important;
+        background-color: var(--secondary-color);
+    }
+
+    nav ul {
+        display: flex;
+        justify-content: flex-start;
+        padding: 0;
+    }
+
+    nav li {
+        border-bottom: none;
+        flex: 0 0 auto;
+    }
+
+    nav a {
+        display: block;
+        padding: 1rem 2rem;
+        border-right: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    nav li:last-child a {
+        border-right: none;
+    }
+
+    nav a:hover {
+        padding-left: 2rem; 
+        background-color: var(--hover-color);
+    }
+
+    nav a.active {
+        background-color: var(--accent-compliant-color); 
+        font-weight: 700;
+    }
+
+    /* ========== MAIN CONTENT ========== */
+    main {
+        padding: 1.5rem 2rem;
+        max-width: 1200px;
+        width: 100%;
+        margin: 0 auto; 
+    }
+
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+        border-bottom: 3px solid var(--accent-compliant-color);
+    }
+
+    /* ==========================================
+       CRITICAL FIX: EQUAL HEIGHTS WITH FLEXBOX
+       ========================================== */
+    .top-row-flex {
+        display: flex;
+        align-items: stretch; 
+        gap: 2%;
+        margin-bottom: 1.5rem;
+    }
+
+    /* Style the two cards as flex children using flex-basis for width */
+    .top-row-flex > .card.about-me {
+        flex: 0 0 65%; /* 65% width */
+        margin-right: 0; 
+        margin-bottom: 0; 
+    }
+
+    .top-row-flex > .card.student-photo {
+        flex: 0 0 33%; /* 33% width */
+        margin-bottom: 0; 
+    }
+
+    /* Force courses section to take full width on new line */
+    main > .card.courses-section {
+        display: block;
+        width: 100%;
+        clear: both;
+    }
+
+    /* ========== COURSE CARDS - GRID LAYOUT ========== */
+    .course-list-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.75rem;
+        padding: 0 1rem 1rem 1rem;
+    }
+
+    .course-filters {
+        padding: 1rem;
+        gap: 0.75rem;
+        margin-bottom: 1.5rem; 
+    }
+
+    .course-filters button {
+        min-width: 100px;
+        border: 2px solid var(--accent-high-contrast);
+        background: transparent;
+        color: var(--accent-high-contrast);
+    }
+
+    .course-filters button.active {
+        background-color: var(--accent-high-contrast);
+        color: var(--accent-high-contrast-text);
+        border-color: var(--accent-high-contrast);
+    }
+    
+    .course-filters button:hover {
+        background-color: var(--accent-high-contrast);
+        color: var(--accent-high-contrast-text);
+        border-color: var(--accent-high-contrast);
+    }
+
+    /* Make the courses-section title match other section titles (About Me / Student Photo) */
+    .courses-section h2 {
+        color: var(--text-light);
+        background-color: var(--primary-color);
+        padding: 0.75rem 1rem;
+        margin: 0 0 1rem 0;
+        text-align: center;
+    }
+    /* Ensure high-contrast 'All' button on larger screens */
+    button#filter-all.active {
+        background-color: var(--accent-high-contrast);
+        color: var(--accent-high-contrast-text);
+        border-color: #E0E1DD;
+    }
+
+    button#filter-all:hover {
+        background-color: var(--accent-high-contrast-hover);
+        color: var(--accent-high-contrast-text);
+    }
+
+    /* Visible focus ring for keyboard users */
+    button#filter-all:focus,
+    button#filter-all.active:focus,
+    .course-filters button:focus {
+        outline: 3px solid var(--focus-outline);
+        outline-offset: 2px;
+    }
+
+    /* ========== FOOTER - SOCIAL ICONS SEPARATE ========== */
+    footer {
+        padding: 2rem 2rem 0 2rem;
+        background-color: transparent;
+    }
+
+    /* Completed Course Styling (match small.css for accessibility) */
+    .course-card.completed {
+        background-color: var(--completed-color-compliant);
+        color: var(--completed-text-color); /* ensure high contrast */
+        border-color: var(--completed-color-compliant);
+    }
+
+    .course-card.completed h3,
+    .course-card.completed p,
+    .course-card.completed span,
+    .course-card.completed a {
+        color: var(--completed-text-color);
+    }
+
+    /* Make non-completed course titles use the same blue as the 'All' button */
+    .course-card h3 {
+        color: var(--accent-high-contrast);
+        margin: 0 0 0.25rem 0;
+        font-size: 1rem;
+    }
+
+    /* Ensure completed cards keep readable title color */
+    .course-card.completed h3 {
+        color: var(--completed-text-color);
+    }
+
+    .social {
+        gap: 2rem;
+        background-color: transparent;
+        margin-bottom: 1.5rem;
+    }
+
+    .social img {
+        width: 28px;
+        height: 28px;
+    }
+
+    footer > p {
+        font-size: 0.85rem;
+        margin: 0;
+        background-color: var(--primary-color);
+        color: var(--text-light);
+        padding: 0.5rem;
+    }
+
+    /* Ensure total credits text is high contrast on larger screens too */
+    #total-credits {
+        color: var(--total-credits-color);
+    }
+}
+
+/* ========== LARGE DESKTOP (900px+) ========== */
+@media (min-width: 900px) {
+    
+    main {
+        padding: 2rem 3rem;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    /* Maintain side-by-side layout for About Me and Photo using flex properties */
+    .top-row-flex > .card.about-me {
+        flex: 0 0 65%;
+    }
+
+    .top-row-flex > .card.student-photo {
+        flex: 0 0 33%;
+    }
+
+    /* Four-column layout for course cards on larger screens */
+    .course-list-container {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1rem;
+    }
+
+    footer {
+        padding: 2.5rem 3rem 0 3rem;
+    }
+
+    .social img {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+/* ========== EXTRA LARGE SCREENS (1200px+) ========== */
+@media (min-width: 1200px) {
+    
+    main {
+        max-width: 1400px;
+    }
+    
+    h1 {
+        font-size: 3rem;
+    }
+
+    /* Keep 4-column grid even on extra large screens */
+    .course-list-container {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.25rem;
+    }
+}

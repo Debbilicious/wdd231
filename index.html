@@ -3,9 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WDD 231</title>
+    <meta name="description" content="WDD 231 Course Home Page for Deborah Okolocha. Web Development project tracking and portfolio.">
+    <meta name="author" content="Deborah Okolocha">
+    <title> WDD 231|Deborah Okolocha</title>
+    
+    <!-- Google Fonts Link (Roboto used for clean, modern look) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/normalize.css"> 
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css">
+
+    <script src="scripts/date.js" defer></script>
+    <script src="scripts/navigation.js" defer></script>
+    <script src="scripts/courses.js" defer></script>
 </head>
 <body>
-  <h1>Welcome to WDD 231</h1>  
+    <header>
+        <div class="logo-area">
+            <img src="images/home.svg" alt="Site Logo Placeholder" class="logo"> 
+            <span class="site-name">Okolocha Deborah</span>
+        </div>
+        
+        <button id="menu-toggle" aria-expanded="false" aria-label="Toggle Navigation">☰</button>
+    </header>
+
+    <nav id="main-nav">
+        <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="#">Chamber Project</a></li>
+            <li><a href="#">Final Project</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1>Home</h1> 
+
+        <div class="top-row-flex">
+            <!-- About Me Section -->
+            <section class="card about-me">
+                <h2>About Me</h2>
+                <p>
+                    Hello! My name is <strong>Deborah Okolocha</strong>. I am a student pursuing my Software Development degree through BYU-Idaho. 
+                    I currently reside in Lagos, Nigeria. This page serves as my home base for all WDD 231 assignments and projects. 
+                    I love to learn new web technologies and build clean, responsive, and functional websites.
+                </p>
+            </section>
+
+            <!-- Student Photo Section -->
+            <section class="card student-photo">
+                <h2>Student Photo</h2>
+                <img src="images/my-pic.jpg" alt="Student Photo of Deborah" loading="lazy">
+            </section>
+        </div>
+        
+        <!-- Web Certificate Courses Section -->
+        <section class="card courses-section">
+            <h2>Web and Computer Programming Certificate Courses</h2>
+            <div class="course-filters">
+                <button id="filter-all" class="active">All Courses</button>
+                <button id="filter-cse">CSE</button>
+                <button id="filter-wdd">WDD</button>
+                <button id="filter-itm">ITM</button>
+            </div>
+            
+            <div class="course-list-container">
+            </div>
+            
+            <p class="credit-total">The total credits for courses listed above is <span id="total-credits">0</span></p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="social">
+            <!-- SOCIAL MEDIA ICONS -->
+            <a href="https://github.com/debbilicious" target="_blank" aria-label="GitHub"><img src="images/github.svg" alt="github" width="16" height="16"></a>
+            <a href="https://www.linkedin.com/in/OkolochaDeborah" target="_blank" aria-label="LinkedIn"><img src="images/linkedin.svg" alt="linkedin" width="16" height="16"></a>
+            <a href="https://www.facebook.com/DebbyOkolocha" target="_blank" aria-label="Facebook"><img src="images/facebook.svg" alt="facebook" width="16" height="16"></a>
+            <a href="https://twitter.com/debbilicious23" target="_blank" aria-label="Twitter"><img src="images/twitter-x.svg" alt="twitter" width="16" height="16"></a>
+            <a href="https://wa.me/2347052422464" target="_blank" aria-label="WhatsApp"><img src="images/whatsapp.svg" alt="whatsapp" width="16" height="16"></a>
+        </div>
+
+        <p>
+            &copy; <span id="currentYear"></span> | Deborah Okolocha | Lagos, Nigeria
+        </p>
+        <p id="lastModified">
+        </p>
+    </footer>
 </body>
 </html>
