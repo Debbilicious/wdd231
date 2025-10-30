@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latter-day Prophets</title>
+    <!-- Link the stylesheet -->
+    <link rel="stylesheet" href="styles/prophets.css">
+    <meta name="description" content="A page demonstrating the Fetch API to display Latter-day Prophets data dynamically.">
+</head>
+<body>
+    <header>
+      <h1>Latter-day Prophets</h1>
+    </header>
+    <main>
+      <!-- The cards will be injected into this div -->
+      <div id="cards"></div>
+    </main>
+    <footer>
+    <p>
+            &copy; <span id="currentYear"></span> | Deborah Okolocha | Latter-day Prophets 
+        </p>
+        <p id="lastModified">
+        </p>
+    <!-- Reference the script using defer to ensure HTML loads first -->
+    <script src="scripts/prophets.js" defer></script>
+    <script src="scripts/date.js" defer></script>
+</footer>
+</body>
+</html>
