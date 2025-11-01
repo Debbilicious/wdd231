@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Delta Shores Business Chamber - Connecting Commerce in Warri, Delta State. Discover local businesses, networking opportunities, and economic growth resources.">
+    <meta name="author" content="Okolocha Deborah">
+    
+    <!-- Facebook Open Graph Meta Tags -->
+    <meta property="og:title" content="Delta Shores Business Chamber - Business Directory">
+    <meta property="og:description" content="Explore member businesses of Delta Shores Business Chamber in Warri, Delta State. From agriculture to luxury hospitality, discover thriving local enterprises.">
+    <meta property="og:image" content="https://your-github-username.github.io/wdd231/chamber/images/dsbc-logo.png">
+    <meta property="og:url" content="https://your-github-username.github.io/wdd231/chamber/directory.html">
+    <meta property="og:type" content="website">
+    
+    <title>Business Directory - Delta Shores Business Chamber</title>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Social Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    
+    <!-- Custom CSS -->
+     <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/directory.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo-section">
+                <img src="images/dsbc-logo.png" alt="Delta Shores Business Chamber Logo" class="logo" loading="lazy"> 
+                <div class="logo-text">
+                    <h1>Delta Shores Business Chamber</h1>
+                    <p class="tagline">Connecting Commerce</p>
+                </div>
+            </div>
+            <div class="header-right">
+                <!--  Theme Toggle Button -->
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav id="mainNav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="discover.html">Discover</a></li>
+            <li><a href="directory.html" class="active">Directory</a></li>
+            <li><a href="join.html">Join</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="podcast.html">Podcast</a></li>
+            <li><a href="events.html">Events</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <div class="directory-container">
+            <div class="directory-header">
+                <h2>Member Directory</h2>
+                <div class="view-controls">
+                    <button id="gridBtn" class="view-btn active" aria-label="Grid view">
+                        <i class="fas fa-grip-horizontal"></i>
+                    </button>
+                    <button id="listBtn" class="view-btn" aria-label="List view">
+                        <i class="fas fa-list"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div id="memberDirectory" class="member-grid">
+                <!-- Members will be loaded here by JavaScript -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section contact-info">
+                <h3>Delta Shores Business Chamber</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Effurun-Sapele Road, Warri, Delta State</p>
+                <p><i class="fas fa-phone"></i> +234 803 123 4567</p>
+                <p><i class="fas fa-envelope"></i> info@deltashoresbc.org</p>
+            </div>
+
+            <div class="footer-section social-media">
+                <h3>Connect With Us</h3>
+                <div class="social-icons">
+                    <a href="https://www.youtube.com" target="_blank" rel="noopener" aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://www.linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://www.facebook.com" target="_blank" rel="noopener" aria-label="Facebook">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://www.x.com" target="_blank" rel="noopener" aria-label="X (Twitter)">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+                    <a href="https://www.instagram.com" target="_blank" rel="noopener" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-section project-info">
+                <p><strong>WDD 231 Class Project</strong></p>
+                <p>Okolocha Deborah</p>
+                <p>&copy; <span id="currentYear"></span> Delta Shores Business Chamber</p>
+                <p class="last-modified">Last Modified: <span id="lastModified"></span></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="scripts/directory.js"></script>
+</body>
+</html>

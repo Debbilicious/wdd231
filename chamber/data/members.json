@@ -1,0 +1,110 @@
+[
+    {
+        "name": "Vital Health Medical Center",
+        "tagline": "Your Health, Our Priority",
+        "address": "45 Hospital Road, Warri, Delta State",
+        "phone": "+234 803 456 7890",
+        "email": "info@vitalhealthmc.com",
+        "website": "https://www.vitalhealthmc.com",
+        "image": "images/dchc.webp",
+        "membershipLevel": 3,
+        "industry": "Healthcare",
+        "yearJoined": 2020
+    },
+    {
+        "name": "First Shore Consulting",
+        "tagline": "Strategic Business Solutions",
+        "address": "78 Effurun-Sapele Road, Warri, Delta State",
+        "phone": "+234 805 123 4567",
+        "email": "contact@firstshore.com",
+        "website": "https://www.firstshore.com",
+        "image": "images/first-shore.webp",
+        "membershipLevel": 3,
+        "industry": "Consulting",
+        "yearJoined": 2019
+    },
+    {
+        "name": "Delta Tech Solutions",
+        "tagline": "Innovating Tomorrow, Today",
+        "address": "12 Innovation Drive, Warri, Delta State",
+        "phone": "+234 807 890 1234",
+        "email": "hello@deltatechsolutions.ng",
+        "website": "https://www.deltatechsolutions.ng",
+        "image": "images/dtsc-team.webp",
+        "membershipLevel": 2,
+        "industry": "Technology",
+        "yearJoined": 2021
+    },
+    {
+        "name": "Evergreen Farms Limited",
+        "tagline": "Growing Fresh, Growing Strong",
+        "address": "Km 15 Warri-Sapele Road, Delta State",
+        "phone": "+234 806 234 5678",
+        "email": "sales@evergreenfarms.ng",
+        "website": "https://www.evergreenfarms.ng",
+        "image": "images/egl-team.webp",
+        "membershipLevel": 2,
+        "industry": "Agriculture",
+        "yearJoined": 2018
+    },
+    {
+        "name": "Koko Retail Boutique",
+        "tagline": "Fashion Beyond Boundaries",
+        "address": "23 Deco Road, Warri, Delta State",
+        "phone": "+234 809 345 6789",
+        "email": "shop@kokoretail.com",
+        "website": "https://www.kokoretail.com",
+        "image": "images/koko-retail.webp",
+        "membershipLevel": 1,
+        "industry": "Retail",
+        "yearJoined": 2022
+    },
+    {
+        "name": "The River Restaurant & Lounge",
+        "tagline": "Fine Dining, Memorable Moments",
+        "address": "56 Waterside Road, Warri, Delta State",
+        "phone": "+234 808 456 7890",
+        "email": "reservations@theriver.ng",
+        "website": "https://www.theriver.ng",
+        "image": "images/rfcb.webp",
+        "membershipLevel": 2,
+        "industry": "Hospitality",
+        "yearJoined": 2020
+    },
+    {
+        "name": "Golden Gate Hotel & Suites",
+        "tagline": "Luxury Redefined",
+        "address": "101 Airport Road, Warri, Delta State",
+        "phone": "+234 810 567 8901",
+        "email": "info@goldengatehotel.ng",
+        "website": "https://www.goldengatehotel.ng",
+        "image": "images/golden-hotel.webp",
+        "membershipLevel": 4,
+        "industry": "Hospitality",
+        "yearJoined": 2017
+    },
+    {
+        "name": "Premier Motors Delta",
+        "tagline": "Drive Your Ambition",
+        "address": "88 PTI Road, Warri, Delta State",
+        "phone": "+234 811 678 9012",
+        "email": "sales@premiermotors.ng",
+        "website": "https://www.premiermotors.ng",
+        "image": "images/premier-motor.webp",
+        "membershipLevel": 3,
+        "industry": "Automotive",
+        "yearJoined": 2019
+    },
+    {
+        "name": "Royal Finance & Credit Bureau",
+        "tagline": "Building Financial Futures",
+        "address": "34 Okumagba Avenue, Warri, Delta State",
+        "phone": "+234 812 789 0123",
+        "email": "info@royalfinance.ng",
+        "website": "https://www.royalfinance.ng",
+        "image": "images/rfcb.webp",
+        "membershipLevel": 2,
+        "industry": "Financial Services",
+        "yearJoined": 2021
+    }
+]
