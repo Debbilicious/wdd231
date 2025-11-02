@@ -1,33 +1,110 @@
-// NEW: Theme Toggle Functionality
+// NEW: Theme Dropdown Functionality
 const themeToggle = document.getElementById('themeToggle');
-let themeIcon = null;
-if (themeToggle) themeIcon = themeToggle.querySelector('i');
+const themeDropdown = document.getElementById('themeDropdown');
 
-// Apply saved theme (default: light)
-const currentTheme = localStorage.getItem('theme') || 'light';
-if (currentTheme === 'dark') {
-    document.body.classList.add('dark-mode');
-    if (themeIcon) {
-        themeIcon.classList.remove('fa-moon');
-        themeIcon.classList.add('fa-sun');
+// Create dropdown menu if it doesn't exist
+function createThemeDropdown() {
+    if (!themeToggle) return;
+    
+    // Create dropdown container
+    const dropdown = document.createElement('div');
+    dropdown.id = 'themeDropdown';
+    dropdown.className = 'theme-dropdown';
+    dropdown.innerHTML = `
+        <button class="theme-option" data-theme="light">
+            <span class="theme-icon">☀</span> Light
+        </button>
+        <button class="theme-option" data-theme="dark">
+            <span class="theme-icon">🌙</span> Dark
+        </button>
+        <button class="theme-option" data-theme="auto">
+            <span class="theme-icon">🌓</span> Auto
+        </button>
+    `;
+    
+    // Insert dropdown after theme toggle button
+    themeToggle.parentNode.insertBefore(dropdown, themeToggle.nextSibling);
+    
+    return dropdown;
+}
+
+// Apply theme based on preference
+function applyTheme(theme) {
+    if (theme === 'auto') {
+        // Check system preference
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (prefersDark) {
+            document.body.classList.add('dark-mode');
+            updateThemeIcon('🌙');
+        } else {
+            document.body.classList.remove('dark-mode');
+            updateThemeIcon('☀');
+        }
+    } else if (theme === 'dark') {
+        document.body.classList.add('dark-mode');
+        updateThemeIcon('🌙');
+    } else {
+        document.body.classList.remove('dark-mode');
+        updateThemeIcon('☀');
     }
 }
 
-// Toggle handler (safe-guards in case element missing)
-if (themeToggle) {
-    themeToggle.addEventListener('click', () => {
-        document.body.classList.toggle('dark-mode');
+// Update theme toggle icon
+function updateThemeIcon(icon) {
+    if (themeToggle) {
+        themeToggle.textContent = icon;
+    }
+}
 
-        if (themeIcon) {
-            if (document.body.classList.contains('dark-mode')) {
-                themeIcon.classList.remove('fa-moon');
-                themeIcon.classList.add('fa-sun');
-                localStorage.setItem('theme', 'dark');
-            } else {
-                themeIcon.classList.remove('fa-sun');
-                themeIcon.classList.add('fa-moon');
-                localStorage.setItem('theme', 'light');
-            }
+// Initialize theme
+const savedTheme = localStorage.getItem('theme') || 'auto';
+applyTheme(savedTheme);
+
+// Toggle dropdown visibility
+if (themeToggle) {
+    const dropdown = createThemeDropdown();
+    
+    themeToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        dropdown.classList.toggle('show');
+    });
+    
+    // Handle theme selection
+    dropdown.addEventListener('click', (e) => {
+        const button = e.target.closest('.theme-option');
+        if (!button) return;
+        
+        const selectedTheme = button.dataset.theme;
+        localStorage.setItem('theme', selectedTheme);
+        applyTheme(selectedTheme);
+        dropdown.classList.remove('show');
+        
+        // Update active state
+        dropdown.querySelectorAll('.theme-option').forEach(opt => {
+            opt.classList.remove('active');
+        });
+        button.classList.add('active');
+    });
+    
+    // Set initial active state
+    const activeOption = dropdown.querySelector(`[data-theme="${savedTheme}"]`);
+    if (activeOption) activeOption.classList.add('active');
+    
+    // Close dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!dropdown.contains(e.target) && e.target !== themeToggle) {
+            dropdown.classList.remove('show');
+        }
+    });
+}
+
+// Listen for system theme changes when auto mode is selected
+if (window.matchMedia) {
+    const darkModeQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    darkModeQuery.addEventListener('change', (e) => {
+        const currentTheme = localStorage.getItem('theme');
+        if (currentTheme === 'auto') {
+            applyTheme('auto');
         }
     });
 }
@@ -39,7 +116,7 @@ const mainNav = document.getElementById('mainNav');
 if (mobileMenuToggle && mainNav) {
     mobileMenuToggle.addEventListener('click', () => {
         mainNav.classList.toggle('active');
-        mobileMenuToggle.classList.toggle('active'); // This makes the X animation work
+        mobileMenuToggle.classList.toggle('active');
     });
 }
 
@@ -48,7 +125,6 @@ const gridBtn = document.getElementById('gridBtn');
 const listBtn = document.getElementById('listBtn');
 const memberDirectory = document.getElementById('memberDirectory');
 
-// Guard defaults if buttons missing
 if (gridBtn && listBtn && memberDirectory) {
     gridBtn.addEventListener('click', () => {
         memberDirectory.className = 'member-grid';
@@ -85,7 +161,6 @@ function displayMembers(members) {
         const memberCard = document.createElement('div');
         memberCard.className = 'member-card';
 
-        // Decide badge class + text + emoji
         const badgeClass =
             member.membershipLevel === 4 ? 'badge-diamond' :
             member.membershipLevel === 3 ? 'badge-gold' :
@@ -100,17 +175,16 @@ function displayMembers(members) {
             member.membershipLevel === 1 ? '🥉 Bronze Member' :
             'Member';
 
-        // Build inner HTML (keeps your layout & classes)
         memberCard.innerHTML = `
             <img src="${member.image || ''}" alt="${escapeHtml(member.name)}" class="member-image" loading="lazy">
             <div class="member-info">
                 <h3>${escapeHtml(member.name)}</h3>
                 <p class="member-tagline">${escapeHtml(member.tagline || '')}</p>
                 <div class="member-details">
-                    ${member.address ?   `<p><i class="fas fa-map-marker-alt"></i> ${escapeHtml(member.address)}</p> `  : ''}
-                    ${member.phone ?  `<p><i class="fas fa-phone"></i> <a href="tel:${member.phone}">${escapeHtml(member.phone)}</a></p> ` : ''}
-                    ${member.website ?  `<p><i class="fas fa-globe"></i> <a href="${member.website}" target="_blank" rel="noopener">${escapeHtml(member.website)}</a></p> ` : ''}
-                    ${member.email ?  `<p><i class="fas fa-envelope"></i> <a href="mailto:${member.email}">${escapeHtml(member.email)}</a></p> ` : ''}
+                    ${member.address ? `<p>📍 ${escapeHtml(member.address)}</p>` : ''}
+                    ${member.phone ? `<p>📞 <a href="tel:${member.phone}">${escapeHtml(member.phone)}</a></p>` : ''}
+                    ${member.website ? `<p>🌐 <a href="${member.website}" target="_blank" rel="noopener">${escapeHtml(member.website)}</a></p>` : ''}
+                    ${member.email ? `<p>✉ <a href="mailto:${member.email}">${escapeHtml(member.email)}</a></p>` : ''}
                 </div>
                 <span class="membership-badge ${badgeClass}">${badgeText}</span>
             </div>
@@ -120,7 +194,6 @@ function displayMembers(members) {
     });
 }
 
-// Small HTML escape helper to avoid accidental markup injection
 function escapeHtml(str) {
     if (!str) return '';
     return String(str)
@@ -133,11 +206,9 @@ function escapeHtml(str) {
 
 // Footer Dynamic Content
 function updateFooter() {
-    // Update current year
     const currentYearEl = document.getElementById('currentYear');
     if (currentYearEl) currentYearEl.textContent = new Date().getFullYear();
 
-    // Update last modified date
     const lastModifiedEl = document.getElementById('lastModified');
     if (lastModifiedEl) {
         const lastModified = new Date(document.lastModified);
@@ -158,7 +229,6 @@ document.addEventListener('DOMContentLoaded', () => {
     loadMembers();
     updateFooter();
 
-    // Fade-in effect for lazy-loaded images
     const lazyImages = document.querySelectorAll('img[loading="lazy"]');
     lazyImages.forEach(img => {
         img.addEventListener('load', () => {
