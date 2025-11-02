@@ -1,12 +1,11 @@
-// NEW: Theme Dropdown Functionality
 const themeToggle = document.getElementById('themeToggle');
 const themeDropdown = document.getElementById('themeDropdown');
 
-// Create dropdown menu if it doesn't exist
+
 function createThemeDropdown() {
     if (!themeToggle) return;
     
-    // Create dropdown container
+    
     const dropdown = document.createElement('div');
     dropdown.id = 'themeDropdown';
     dropdown.className = 'theme-dropdown';
@@ -22,16 +21,16 @@ function createThemeDropdown() {
         </button>
     `;
     
-    // Insert dropdown after theme toggle button
+    
     themeToggle.parentNode.insertBefore(dropdown, themeToggle.nextSibling);
     
     return dropdown;
 }
 
-// Apply theme based on preference
+
 function applyTheme(theme) {
     if (theme === 'auto') {
-        // Check system preference
+        
         const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         if (prefersDark) {
             document.body.classList.add('dark-mode');
@@ -49,18 +48,18 @@ function applyTheme(theme) {
     }
 }
 
-// Update theme toggle icon
+
 function updateThemeIcon(icon) {
     if (themeToggle) {
         themeToggle.textContent = icon;
     }
 }
 
-// Initialize theme
+
 const savedTheme = localStorage.getItem('theme') || 'auto';
 applyTheme(savedTheme);
 
-// Toggle dropdown visibility
+
 if (themeToggle) {
     const dropdown = createThemeDropdown();
     
@@ -69,7 +68,7 @@ if (themeToggle) {
         dropdown.classList.toggle('show');
     });
     
-    // Handle theme selection
+    
     dropdown.addEventListener('click', (e) => {
         const button = e.target.closest('.theme-option');
         if (!button) return;
@@ -79,18 +78,18 @@ if (themeToggle) {
         applyTheme(selectedTheme);
         dropdown.classList.remove('show');
         
-        // Update active state
+       
         dropdown.querySelectorAll('.theme-option').forEach(opt => {
             opt.classList.remove('active');
         });
         button.classList.add('active');
     });
     
-    // Set initial active state
+    
     const activeOption = dropdown.querySelector(`[data-theme="${savedTheme}"]`);
     if (activeOption) activeOption.classList.add('active');
     
-    // Close dropdown when clicking outside
+    
     document.addEventListener('click', (e) => {
         if (!dropdown.contains(e.target) && e.target !== themeToggle) {
             dropdown.classList.remove('show');
@@ -98,7 +97,7 @@ if (themeToggle) {
     });
 }
 
-// Listen for system theme changes when auto mode is selected
+
 if (window.matchMedia) {
     const darkModeQuery = window.matchMedia('(prefers-color-scheme: dark)');
     darkModeQuery.addEventListener('change', (e) => {
@@ -109,7 +108,7 @@ if (window.matchMedia) {
     });
 }
 
-// FIXED: Mobile Menu Toggle with close button animation
+
 const mobileMenuToggle = document.getElementById('mobileMenuToggle');
 const mainNav = document.getElementById('mainNav');
 
@@ -120,7 +119,7 @@ if (mobileMenuToggle && mainNav) {
     });
 }
 
-// View Toggle Buttons (grid/list)
+
 const gridBtn = document.getElementById('gridBtn');
 const listBtn = document.getElementById('listBtn');
 const memberDirectory = document.getElementById('memberDirectory');
@@ -139,7 +138,7 @@ if (gridBtn && listBtn && memberDirectory) {
     });
 }
 
-// Fetch and Display Members
+
 async function loadMembers() {
     if (!memberDirectory) return;
     try {
@@ -204,7 +203,7 @@ function escapeHtml(str) {
         .replace(/>/g, '&gt;');
 }
 
-// Footer Dynamic Content
+
 function updateFooter() {
     const currentYearEl = document.getElementById('currentYear');
     if (currentYearEl) currentYearEl.textContent = new Date().getFullYear();
@@ -224,7 +223,7 @@ function updateFooter() {
     }
 }
 
-// Initialize
+
 document.addEventListener('DOMContentLoaded', () => {
     loadMembers();
     updateFooter();

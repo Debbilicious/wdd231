@@ -1,4 +1,3 @@
-/* Global Styles */
 * {
     margin: 0;
     padding: 0;
@@ -25,7 +24,7 @@ main {
     flex: 1;
 }
 
-/* Header Styles */
+
 header {
     background-color: #FFFFFF;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -70,7 +69,7 @@ header {
     font-weight: 600;
 }
 
-/* Header Right Section */
+
 .header-right {
     display: flex;
     align-items: center;
@@ -99,7 +98,6 @@ header {
     transform: scale(1.1);
 }
 
-/* Theme Dropdown Menu */
 .theme-dropdown {
     position: absolute;
     top: 60px;
@@ -192,7 +190,6 @@ header {
     top: 14px;
 }
 
-/* Navigation Styles */
 nav {
     background-color: #0D3B47;
 }
@@ -276,7 +273,6 @@ nav a.active {
     color: #000000;
 }
 
-/* Grid View */
 .member-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -303,7 +299,7 @@ nav a.active {
     background-color: #E0E0E0;
 }
 
-/* Fade-in animation for lazy-loaded images */
+
 .member-image {
     opacity: 1;
     transition: opacity 0.8s ease-in;
@@ -363,7 +359,7 @@ nav a.active {
     text-decoration: underline;
 }
 
-/* MEMBERSHIP BADGE BASE */
+
 .membership-badge {
     display: inline-flex;
     align-items: center;
@@ -407,7 +403,6 @@ nav a.active {
     border: 2px solid #00796B;
 }
 
-/* List View */
 .member-list {
     display: flex;
     flex-direction: column;
@@ -431,7 +426,7 @@ nav a.active {
     padding: 1rem 1.5rem 1rem 0;
 }
 
-/* Footer Styles */
+
 footer {
     background-color: #0D3B47;
     color: #FFFFFF;
@@ -468,7 +463,7 @@ footer {
     text-align: left;
 }
 
-/* Social Icons - Updated for SVG Images */
+
 .social-icons {
     display: flex;
     gap: 1rem;
@@ -501,11 +496,11 @@ footer {
     opacity: 0.9;
 }
 
-/* Style the SVG images inside social icons */
+
 .social-icons a img {
     width: 32px;
     height: 32px;
-    filter: brightness(0) invert(1); /* Makes SVGs white */
+    filter: brightness(0) invert(1);
 }
 
 .last-modified {
@@ -514,7 +509,7 @@ footer {
     margin-top: 1rem;
 }
 
-/* Dark Mode Styles */
+
 body.dark-mode {
     background-color: #121212;
     color: #FFFFFF;
@@ -633,7 +628,7 @@ body.dark-mode .badge-member {
     border-color: #00796B;
 }
 
-/* Responsive Design */
+
 @media (max-width: 768px) {
     .header-container { padding: 1rem; }
     .logo { width: 60px; height: 60px; }
@@ -641,7 +636,7 @@ body.dark-mode .badge-member {
     .tagline { font-size: 0.8rem; }
     .theme-toggle { width: 35px; height: 35px; font-size: 1rem; }
     
-    /* Mobile Theme Dropdown Positioning */
+    
     .theme-dropdown {
         right: 10px;
         top: 55px;
@@ -682,7 +677,7 @@ body.dark-mode .badge-member {
     body { min-width: 320px; }
 }
 
-/* FINAL CONTRAST FIXES - BULLETPROOF */
+
 span.membership-badge.badge-member,
 .membership-badge.badge-member,
 .badge-member,
@@ -704,7 +699,7 @@ body.dark-mode footer .footer-section h3 {
     color: #000000;
 }
 
-/* Focus indicators for accessibility */
+
 a:focus-visible,
 button:focus-visible,
 .theme-toggle:focus-visible,
