@@ -1,0 +1,79 @@
+/* weather.css */
+
+/* --- General Page and Layout --- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 20px;
+    line-height: 1.6;
+    background-color: #e6f7ff;
+    color: #333;
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 30px;
+    border: 1px solid #b3e0ff;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #004d99; 
+    text-align: center;
+    border-bottom: 2px solid #004d99;
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+}
+
+main {
+    text-align: center;
+    padding: 20px;
+}
+
+/* --- Temperature Display --- */
+p {
+    font-size: 1.4em;
+    font-weight: 500;
+}
+
+#current-temp {
+    color: #004d99;
+    font-size: 1.8em;
+    font-weight: bold;
+    display: inline-block;
+    padding: 0 5px;
+}
+
+/* --- Icon and Caption --- */
+figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px 0;
+    padding: 15px;
+    background-color: #ffffff; 
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    border: 1px solid #cccccc;
+}
+
+#weather-icon {
+    width: 80px;
+    height: 80px;
+}
+
+figcaption {
+    font-size: 1.1em;
+    font-style: normal;
+    color: #004d99; 
+    margin-top: -10px;
+    font-weight: 600;
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 15px;
+    border-top: 1px dashed #cccccc;
+    font-size: 0.85em;
+    color: black;
+}

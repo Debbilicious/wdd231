@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 231 - Modular JavaScript Demo</title>
+
+    <meta name="author" content="Okolocha Deborah">
+    <meta name="description" content="A demonstration of modular JavaScript structure for course management. Features student enrollment, dropping, and dynamic data rendering.">
+
+    <link rel="stylesheet" href="styles/modules.css"> 
+</head>
+<body>
+    <header>
+        <h1>Course Enrollment Management</h1>
+        <h2></h2> 
+    </header>
+
+    <main>
+        <section id="enrollment-controls">
+            <h3>Change Enrollment</h3>
+            
+            <label for="sectionNumber">Select Section:</label>
+            <select id="sectionNumber">
+                </select>
+            
+            <button id="enrollStudent">Enroll Student</button>
+            <button id="dropStudent">Drop Student</button>
+        </section>
+
+        <section id="course-details">
+            <h3>Section Details</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Section</th>
+                        <th>Room</th>
+                        <th>Enrolled</th>
+                        <th>Days</th>
+                        <th>Instructor</th>
+                    </tr>
+                </thead>
+                <tbody id="sections">
+                    </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Course Manager</p>
+    </footer>
+
+    <script type="module" src="scripts/modules.mjs"></script>
+</body>
+</html>

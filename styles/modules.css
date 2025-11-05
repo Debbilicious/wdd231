@@ -1,0 +1,92 @@
+/* modules.css */
+
+/* --- General Body and Typography --- */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    line-height: 1.6;
+    background-color: #f4f4f9; /* Light background for the page */
+    color: #333;
+}
+
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff; /* White background for the main content area */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2, h3 {
+    color: #0056b3; /* A professional blue color */
+}
+
+/* --- Enrollment Controls Section --- */
+#enrollment-controls {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#enrollment-controls * {
+    margin-right: 10px;
+}
+
+/* Style for the buttons */
+button {
+    padding: 8px 15px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+#enrollStudent {
+    background-color: #0056b3; /* Green for enroll */
+}
+
+#dropStudent {
+    background-color: brown/*Red for drop */
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+/* --- Table Styles --- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #eee;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f4f4f9; /* Light gray for table headers */
+    color: #495057;
+    font-weight: bold;
+}
+
+/* Alternating row colors for readability */
+#sections tr:nth-child(even) {
+    background-color: #f8f9fa; 
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 10px;
+    border-top: 1px solid #ddd;
+    font-size: 0.9em;
+    color: black;
+}
