@@ -353,6 +353,8 @@ nav a.active {
     text-decoration: underline;
 }
 
+/* --- CONSOLIDATED MEMBERSHIP BADGES --- */
+/* Base style for all badges */
 .membership-badge {
     display: inline-flex;
     align-items: center;
@@ -363,37 +365,36 @@ nav a.active {
     font-size: 0.85rem;
     font-weight: 700;
     text-transform: uppercase;
+    color: var(--color-dark-text);
+    border: 2px solid #E0E0E0;
+    background-color: var(--color-light-gray);
 }
 
+/* Unique Styles for Each Badge Level */
 .badge-diamond {
     background: linear-gradient(135deg, #B9F2FF, #E0FFFF);
-    color: var(--color-dark-text);
-    border: 2px solid var(--color-light-bg);
-    box-shadow: 0 0 8px rgba(185, 242, 255, 0.45);
+    border-color: #A0D2E0; 
 }
 
 .badge-gold {
     background-color: #FFD700;
-    color: var(--color-dark-text);
-    border: 2px solid #B8860B;
+    border-color: #E0C000;
 }
 
 .badge-silver {
     background-color: #A0A0A0;
-    color: var(--color-dark-text);
-    border: 2px solid #606060;
+    border-color: #808080;
 }
 
 .badge-bronze {
     background-color: #F4D1A3;
-    color: var(--color-dark-text);
-    border: 2px solid #E0B07A;
+    border-color: #D4B190;
 }
 
 .badge-member {
     background-color: var(--color-accent); 
     color: var(--color-light-text);
-    border: 2px solid var(--color-primary-dark);
+    border-color: var(--color-primary-dark);
 }
 
 .member-list {
@@ -503,119 +504,122 @@ footer {
     margin-top: 1rem;
 }
 
-/* --- DARK MODE STYLES: CONSOLIDATED --- */
+/* --- DARK MODE STYLES (Audit-Compliant Structure) --- */
 body.dark-mode {
     background-color: var(--color-dark-bg);
     color: var(--color-dark-mode-text);
+}
 
-    & header {
-        background-color: var(--color-secondary-dark);
-    }
+body.dark-mode header {
+    background-color: var(--color-secondary-dark);
+}
 
-    & .logo-text h1 {
-        color: var(--color-dark-mode-primary);
-    }
+body.dark-mode .logo-text h1 {
+    color: var(--color-dark-mode-primary);
+}
 
-    & .tagline {
-        color: #E0E0E0;
-    }
+body.dark-mode .tagline {
+    color: #E0E0E0;
+}
 
-    & .theme-toggle {
-        border-color: var(--color-dark-mode-primary);
-        color: var(--color-dark-mode-primary);
-    }
+body.dark-mode .theme-toggle {
+    border-color: var(--color-dark-mode-primary);
+    color: var(--color-dark-mode-primary);
+}
 
-    & .theme-dropdown {
-        background-color: #2C2C2C;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-    }
+body.dark-mode .theme-dropdown {
+    background-color: #2C2C2C;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
 
-    & .theme-option {
-        color: var(--color-dark-mode-text);
+body.dark-mode .theme-option {
+    color: var(--color-dark-mode-text);
+}
 
-        &:hover {
-            background-color: #3C3C3C;
-        }
+body.dark-mode .theme-option:hover {
+    background-color: #3C3C3C;
+}
 
-        &.active {
-            background-color: var(--color-accent);
-            color: var(--color-light-text);
-        }
-    }
+body.dark-mode .theme-option.active {
+    background-color: var(--color-accent);
+    color: var(--color-light-text);
+}
 
-    & .mobile-menu-toggle span {
-        background-color: var(--color-dark-mode-primary);
-    }
+body.dark-mode .mobile-menu-toggle span {
+    background-color: var(--color-dark-mode-primary);
+}
 
-    & nav {
-        background-color: var(--color-secondary-dark); 
+body.dark-mode nav {
+    background-color: var(--color-secondary-dark); 
+}
 
-        & a, & a:visited, & a:link {
-            color: var(--color-light-text);
-            background-color: var(--color-secondary-dark);
-        }
+body.dark-mode nav a,
+body.dark-mode nav a:visited,
+body.dark-mode nav a:link {
+    color: var(--color-light-text);
+    background-color: var(--color-secondary-dark);
+}
 
-        & a:hover, & a.active {
-            background-color: #444444; 
-            color: var(--color-light-text);
-        }
-    }
+body.dark-mode nav a:hover,
+body.dark-mode nav a.active {
+    background-color: #444444; 
+    color: var(--color-light-text);
+}
 
-    & .directory-header h2 {
-        color: var(--color-dark-mode-primary);
-    }
+body.dark-mode .directory-header h2 {
+    color: var(--color-dark-mode-primary);
+}
 
-    & .view-btn {
-        background-color: var(--color-secondary-dark);
-        border-color: #2C2C2C;
-        color: var(--color-dark-mode-text);
+body.dark-mode .view-btn {
+    background-color: var(--color-secondary-dark);
+    border-color: #2C2C2C;
+    color: var(--color-dark-mode-text);
+}
 
-        &:hover {
-            border-color: var(--color-dark-mode-primary);
-            color: var(--color-dark-mode-primary);
-        }
+body.dark-mode .view-btn:hover {
+    border-color: var(--color-dark-mode-primary);
+    color: var(--color-dark-mode-primary);
+}
 
-        &.active {
-            background-color: var(--color-dark-mode-primary);
-            border-color: var(--color-dark-mode-primary);
-            color: var(--color-dark-text);
-        }
-    }
+body.dark-mode .view-btn.active {
+    background-color: var(--color-dark-mode-primary);
+    border-color: var(--color-dark-mode-primary);
+    color: var(--color-dark-text);
+}
 
-    & .member-card {
-        background-color: var(--color-secondary-dark);
-        box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+body.dark-mode .member-card {
+    background-color: var(--color-secondary-dark);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+}
 
-        &:hover {
-            box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
-        }
-    }
+body.dark-mode .member-card:hover {
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
+}
 
-    & .member-image {
-        background-color: #2C2C2C;
-    }
+body.dark-mode .member-image {
+    background-color: #2C2C2C;
+}
 
-    & .member-info h3 {
-        color: var(--color-dark-mode-primary);
-    }
+body.dark-mode .member-info h3 {
+    color: var(--color-dark-mode-primary);
+}
 
-    & .member-tagline,
-    & .member-details a,
-    & .member-details p {
-        color: #E0E0E0;
-    }
+body.dark-mode .member-tagline,
+body.dark-mode .member-details a,
+body.dark-mode .member-details p {
+    color: #E0E0E0;
+}
 
-    & .member-details a:hover {
-        color: var(--color-dark-mode-primary);
-    }
+body.dark-mode .member-details a:hover {
+    color: var(--color-dark-mode-primary);
+}
 
-    & .footer-section a {
-        color: var(--color-dark-mode-text);
-    }
+body.dark-mode .footer-section a {
+    color: var(--color-dark-mode-text);
+}
 
-    & .footer-section a:hover {
-        color: var(--color-accent);
-    }
+body.dark-mode .footer-section a:hover {
+    color: var(--color-accent);
 }
 
 /* --- MOBILE STYLES --- */
