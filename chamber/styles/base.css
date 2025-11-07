@@ -1,19 +1,18 @@
 :root {
-    /* WDD 131-Inspired Colors for High Contrast */
-    --color-primary-dark: #003366;       /* New Primary/Header Dark Blue (from WDD 131) */
-    --color-nav-bg: #003366;             /* Nav Background */
-    --color-accent: #006666;             /* Adjusted Teal Accent: Brighter for guaranteed contrast pass on hover */
+    --color-primary-dark: #003366;      
+    --color-nav-bg: #003366;            
+    --color-nav-hover: #004d99;         
+    --color-accent: #006666;             
     
-    /* Existing Color Variables, adjusted */
-    --color-light-bg: #CCE5FF;           /* Light Blue BG (from WDD 131 project) */
-    --color-dark-bg: #121212;
-    --color-secondary-dark: #1E1E1E; /* Dark Mode Header/Card BG */
-    --color-light-text: #FFFFFF;         /* Link text is pure white for max contrast */
-    --color-dark-text: #111111;          /* Dark Text (from WDD 131) */
-    --color-light-gray: #f4f4f4;         /* Header BG/Secondary (from WDD 131) */
+    --color-light-bg: #CCE5FF;          
+    --color-dark-bg: #121212;           
+    --color-secondary-dark: #1E1E1E;     
+    --color-light-text: #FFFFFF;         
+    --color-dark-text: #111111;         
+    --color-light-gray: #f4f4f4;         
     --color-dark-gray: #444444; 
     --color-dark-mode-text: #FFFFFF;
-    --color-dark-mode-primary: #CCE5FF; /* Light accent for dark mode */
+    --color-dark-mode-primary: #CCE5FF; 
 }
 
 * {
@@ -223,29 +222,25 @@ nav li {
     flex: 1;
 }
 
-/* --- GUARANTEED PASS FIX: FORCING WHITE TEXT ON DARK BACKGROUND --- */
 nav a,
 nav a:link,
 nav a:visited {
     display: block;
     padding: 1rem 1.5rem;
-    /* 1. Explicitly force WHITE text (12.5:1 contrast) */
     color: #FFFFFF; 
     text-decoration: none;
     font-weight: 500;
     text-align: center;
     transition: background-color 0.3s;
-    /* 2. Explicitly force the dark background here too to ensure the contrast tool calculates correctly */
     background-color: var(--color-nav-bg); 
 }
 
 nav a:hover,
 nav a.active {
-    background-color: var(--color-accent); /* Brighter Teal (#006666) */
-    color: #FFFFFF; /* White text on brighter teal is 9.9:1 (PASS) */
+    background-color: var(--color-nav-hover); 
+    color: #FFFFFF;
     font-weight: 600;
 }
-/* --- END GUARANTEED PASS FIX --- */
 
 .directory-container {
     max-width: 1200px;
@@ -259,7 +254,7 @@ nav a.active {
     align-items: center;
     margin-bottom: 2rem;
     padding-bottom: 1rem;
-    border-bottom: 3px solid var(--color-accent);
+    border-bottom: 3px solid var(--color-primary-dark); 
 }
 
 .directory-header h2 {
@@ -284,19 +279,17 @@ nav a.active {
 }
 
 .view-btn:hover {
-    border-color: var(--color-accent);
-    color: var(--color-accent);
+    border-color: var(--color-primary-dark); 
+    color: var(--color-primary-dark);
 }
 
 .view-btn.active {
-    background-color: var(--color-accent);
+    background-color: var(--color-primary-dark);
     border-color: var(--color-primary-dark);
     color: var(--color-light-text);
 }
 
-/* --- GRID LAYOUT DEFINITION (Applies to all screens > 300px width) --- */
 #memberDirectory.member-grid {
-    /* Sets the default to 3+ columns for desktop using auto-fit */
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
@@ -396,7 +389,7 @@ nav a.active {
 }
 
 .badge-member {
-    background-color: var(--color-accent);
+    background-color: var(--color-accent); 
     color: var(--color-light-text);
     border: 2px solid var(--color-primary-dark);
 }
@@ -499,7 +492,6 @@ footer {
 .social-icons a img {
     width: 32px;
     height: 32px;
-    /* In dark mode, ensure white icons remain white */
     filter: brightness(0) invert(1);
 }
 
@@ -509,7 +501,7 @@ footer {
     margin-top: 1rem;
 }
 
-/* --- DARK MODE STYLES (Using Variables) --- */
+/* --- DARK MODE STYLES --- */
 body.dark-mode {
     background-color: var(--color-dark-bg);
     color: var(--color-dark-mode-text);
@@ -558,7 +550,6 @@ body.dark-mode nav {
     background-color: var(--color-secondary-dark); 
 }
 
-/* FIX: High contrast text maintained in dark mode nav */
 body.dark-mode nav a,
 body.dark-mode nav a:visited,
 body.dark-mode nav a:link {
@@ -568,7 +559,7 @@ body.dark-mode nav a:link {
 
 body.dark-mode nav a:hover,
 body.dark-mode nav a.active {
-    background-color: var(--color-accent);
+    background-color: #444444; 
     color: var(--color-light-text);
 }
 
@@ -583,14 +574,14 @@ body.dark-mode .view-btn {
 }
 
 body.dark-mode .view-btn:hover {
-    border-color: var(--color-accent);
-    color: var(--color-accent);
+    border-color: var(--color-dark-mode-primary);
+    color: var(--color-dark-mode-primary);
 }
 
 body.dark-mode .view-btn.active {
-    background-color: var(--color-accent);
+    background-color: var(--color-dark-mode-primary);
     border-color: var(--color-dark-mode-primary);
-    color: var(--color-light-text);
+    color: var(--color-dark-text);
 }
 
 body.dark-mode .member-card {
@@ -628,46 +619,40 @@ body.dark-mode .footer-section a:hover {
     color: var(--color-accent);
 }
 
-/* --- MOBILE STYLES (Screen size < 768px) --- */
+/* --- MOBILE STYLES --- */
 @media (max-width: 768px) {
     .header-container { padding: 1rem; }
     .logo { width: 60px; height: 60px; }
     
-    .mobile-menu-toggle { display: flex; } /* Show hamburger menu */
+    .mobile-menu-toggle { display: flex; } 
     nav ul { padding: 0; }
     
     nav { 
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.3s ease-in-out;
-        /* When closed, the nav takes on the header background color in case of light mode */
         background-color: var(--color-light-gray); 
     }
     
     nav.active { 
         max-height: 500px; 
-        /* When open, the nav takes on the light page background color (CCE5FF) */
         background-color: var(--color-light-bg);
     }
     
     nav ul { flex-direction: column; padding: 1rem; }
     nav a { padding: 0.75rem 1rem; text-align: left; }
     
-    /* FIX FOR MOBILE/LIGHT BACKGROUND CONTRAST */
-    /* When the menu opens on mobile, the background is the light blue page body (CCE5FF) */
     nav.active a,
     nav.active a:link,
     nav.active a:visited {
-        /* Force dark text on the light background to pass contrast */
         color: var(--color-dark-text); 
         background-color: transparent; 
     }
     
-    /* Ensure hover/active states maintain contrast */
     nav.active a:hover,
     nav.active a.active {
-        background-color: var(--color-accent);
-        color: var(--color-light-text); /* White text is OK over dark accent background */
+        background-color: var(--color-nav-hover);
+        color: var(--color-light-text); 
     }
 
     .directory-container { padding: 0 1rem; }
@@ -677,24 +662,14 @@ body.dark-mode .footer-section a:hover {
         gap: 1rem;
     }
 
-    /* *** CRITICAL GRID: FORCES THE REQUIRED 2-COLUMN GRID ON MOBILE *** */
     #memberDirectory.member-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 0.75rem; 
     }
     
-    /* Adjustments to make card content fit cleanly in 2 columns */
-    .member-grid .member-card {
-        overflow: hidden; 
-    }
-    
-    .member-grid .member-image { 
-        height: 100px; 
-    }
-    
-    .member-grid .member-info { 
-        padding: 0.6rem; 
-    }
+    .member-grid .member-card { overflow: hidden; }
+    .member-grid .member-image { height: 100px; }
+    .member-grid .member-info { padding: 0.6rem; }
     
     .member-grid .member-info h3 { 
         font-size: 0.8rem; 
@@ -720,17 +695,12 @@ body.dark-mode .footer-section a:hover {
         margin-top: 0.5rem;
     }
 
-    /* List View is also adjusted to fit better on mobile */
     .member-list .member-card { 
         grid-template-columns: 80px 1fr;
         gap: 0.75rem;
     }
     
-    .member-list .member-image { 
-        width: 80px;
-        height: 80px;
-    }
-    
+    .member-list .member-image { width: 80px; height: 80px; }
     .member-list .member-info { padding: 0.5rem 0; }
     
     .footer-container { grid-template-columns: 1fr; gap: 1.5rem; }
@@ -739,8 +709,7 @@ body.dark-mode .footer-section a:hover {
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
-    /* Tablet Grid: 2 columns */
-    #memberDirectory.member-grid { grid-template-columns: repeat(2, 1fr); }
+    .memberDirectory.member-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 a:focus-visible,
