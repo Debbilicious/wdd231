@@ -7,7 +7,7 @@
 body {
     font-family: 'Inter', sans-serif;
     color: #000000;
-    background-color: #F5F5F5;
+    background-color: #87CEEB;
     line-height: 1.6;
     min-height: 100vh;
     display: flex;
@@ -23,7 +23,6 @@ h1, h2, h3 {
 main {
     flex: 1;
 }
-
 
 header {
     background-color: #FFFFFF;
@@ -53,8 +52,6 @@ header {
     height: 80px;
     border-radius: 50%;
     object-fit: cover;
-    border: none;
-    background: transparent;
 }
 
 .logo-text h1 {
@@ -68,7 +65,6 @@ header {
     color: #212121;
     font-weight: 600;
 }
-
 
 .header-right {
     display: flex;
@@ -131,7 +127,7 @@ header {
     cursor: pointer;
     font-size: 1rem;
     font-family: 'Inter', sans-serif;
-    color: #000000;
+    color: #212121; /* Changed for better contrast in light mode */
     transition: background-color 0.2s;
     text-align: left;
 }
@@ -146,8 +142,13 @@ header {
     font-weight: 600;
 }
 
-.theme-icon {
+.theme-icon { /* This is your existing rule */
     font-size: 1.2rem;
+}
+
+/* ADD THIS NEW RULE HERE */
+.theme-option .theme-icon {
+    color: #212121; /* Dark gray for icon in light mode */
 }
 
 .mobile-menu-toggle {
@@ -166,7 +167,6 @@ header {
     width: 25px;
     height: 3px;
     background-color: #0D3B47;
-    margin: 3px 0;
     transition: 0.3s;
     position: absolute;
     left: 5px;
@@ -191,7 +191,7 @@ header {
 }
 
 nav {
-    background-color: #0D3B47;
+    background-color:#1F4E5F;
 }
 
 nav ul {
@@ -211,7 +211,7 @@ nav li {
 nav a {
     display: block;
     padding: 1rem 1.5rem;
-    color: #000000;
+    color: #333333;
     text-decoration: none;
     font-weight: 500;
     text-align: center;
@@ -220,11 +220,10 @@ nav a {
 
 nav a:hover,
 nav a.active {
-    background-color: #00BFA5;
+    background-color: #00bfa5;/* Darker teal for better contrast */
     color: #000000;
     font-weight: 600;
 }
-
 
 .directory-container {
     max-width: 1200px;
@@ -299,30 +298,6 @@ nav a.active {
     background-color: #E0E0E0;
 }
 
-
-.member-image {
-    opacity: 1;
-    transition: opacity 0.8s ease-in;
-}
-
-.member-image[data-loaded="true"] {
-    opacity: 0;
-}
-
-.member-image[src=""],
-.member-image:not([src]) {
-    background: linear-gradient(135deg, #00BFA5 0%, #004D40 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.member-image[src=""]:after,
-.member-image:not([src]):after {
-    content: "Building";
-    font-size: 4rem;
-}
-
 .member-info {
     padding: 1.5rem;
 }
@@ -358,7 +333,6 @@ nav a.active {
     color: #0D3B47;
     text-decoration: underline;
 }
-
 
 .membership-badge {
     display: inline-flex;
@@ -426,9 +400,8 @@ nav a.active {
     padding: 1rem 1.5rem 1rem 0;
 }
 
-
 footer {
-    background-color: #0D3B47;
+    background-color: #1F4E5F;
     color: #FFFFFF;
     padding: 2rem 0 1rem;
     margin-top: 3rem;
@@ -457,19 +430,22 @@ footer {
     gap: 0.5rem;
 }
 
-.contact-info,
-.social-media,
-.project-info {
-    text-align: left;
+.footer-section a {
+    color: #FFFFFF;
+    text-decoration: none;
+    transition: color 0.3s;
 }
 
+.footer-section a:hover {
+    color: #00BFA5;
+    text-decoration: underline;
+}
 
 .social-icons {
     display: flex;
     gap: 1rem;
     margin-top: 1rem;
     flex-wrap: wrap;
-    justify-content: flex-start;
 }
 
 .social-icons a {
@@ -496,7 +472,6 @@ footer {
     opacity: 0.9;
 }
 
-
 .social-icons a img {
     width: 32px;
     height: 32px;
@@ -505,10 +480,9 @@ footer {
 
 .last-modified {
     font-size: 0.85rem;
-    color: #E0E0E0;
+    color: #FFFFFF;
     margin-top: 1rem;
 }
-
 
 body.dark-mode {
     background-color: #121212;
@@ -555,11 +529,11 @@ body.dark-mode .mobile-menu-toggle span {
 }
 
 body.dark-mode nav {
-    background-color: #B2DFDB;
+    background-color: #1E1E1E;
 }
 
 body.dark-mode nav a {
-    color: #000000;
+    color: #FFFFFF;
 }
 
 body.dark-mode nav a:hover,
@@ -606,10 +580,7 @@ body.dark-mode .member-info h3 {
     color: #B2DFDB;
 }
 
-body.dark-mode .member-tagline {
-    color: #E0E0E0;
-}
-
+body.dark-mode .member-tagline,
 body.dark-mode .member-details a {
     color: #E0E0E0;
 }
@@ -618,16 +589,13 @@ body.dark-mode .member-details a:hover {
     color: #B2DFDB;
 }
 
-body.dark-mode .footer-section h3 {
-    color: #000000;
+body.dark-mode .footer-section a {
+    color: #FFFFFF;
 }
 
-body.dark-mode .badge-member {
-    background-color: #00BFA5;
-    color: #000000;
-    border-color: #00796B;
+body.dark-mode .footer-section a:hover {
+    color: #00BFA5;
 }
-
 
 @media (max-width: 768px) {
     .header-container { padding: 1rem; }
@@ -635,36 +603,52 @@ body.dark-mode .badge-member {
     .logo-text h1 { font-size: 1.2rem; }
     .tagline { font-size: 0.8rem; }
     .theme-toggle { width: 35px; height: 35px; font-size: 1rem; }
-    
-    
-    .theme-dropdown {
-        right: 10px;
-        top: 55px;
-        min-width: 130px;
-    }
-    
-    .theme-option {
-        padding: 0.6rem 0.8rem;
-        font-size: 0.9rem;
-    }
-    
-    .theme-icon {
-        font-size: 1rem;
-    }
-    
+    .theme-dropdown { right: 10px; top: 55px; min-width: 130px; }
+    .theme-option { padding: 0.6rem 0.8rem; font-size: 0.9rem; }
+    .theme-icon { font-size: 1rem; }
     .mobile-menu-toggle { display: flex; }
-    nav { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-in-out; }
+    
+    nav { 
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out;
+    }
+    
     nav.active { max-height: 500px; }
     nav ul { flex-direction: column; padding: 1rem; }
     nav a { padding: 0.75rem 1rem; text-align: left; }
+    
     .directory-container { padding: 0 1rem; }
-    .directory-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
-    .member-grid { grid-template-columns: 1fr; }
-    .member-list .member-card { grid-template-columns: 1fr; }
-    .member-list .member-image { width: 100%; height: 200px; }
+    .directory-header { 
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .member-grid { 
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    .member-grid .member-image { height: 150px; }
+    .member-grid .member-info { padding: 1rem; }
+    .member-grid .member-info h3 { font-size: 1rem; }
+    .member-grid .member-tagline { font-size: 0.8rem; }
+    .member-grid .member-details p { font-size: 0.85rem; }
+    
+    .member-list .member-card { 
+        grid-template-columns: 120px 1fr;
+        gap: 1rem;
+    }
+    
+    .member-list .member-image { 
+        width: 120px;
+        height: 120px;
+    }
+    
+    .member-list .member-info { padding: 0.5rem 0; }
+    
     .footer-container { grid-template-columns: 1fr; gap: 1.5rem; }
-    .footer-section, .social-media, .project-info { text-align: left; }
-    .social-icons { justify-content: flex-start; }
     .social-icons a { width: 45px; height: 45px; }
     .social-icons a img { width: 28px; height: 28px; }
 }
@@ -673,40 +657,8 @@ body.dark-mode .badge-member {
     .member-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
-@media (min-width: 320px) {
-    body { min-width: 320px; }
-}
-
-
-span.membership-badge.badge-member,
-.membership-badge.badge-member,
-.badge-member,
-nav a:hover, 
-nav a.active,
-.view-btn.active,
-.theme-toggle:hover {
-    background-color: #00BFA5;
-    color: #000000;
-    border-color: #00796B;
-}
-
-footer .footer-section h3,
-.footer-section h3 {
-    color: #FFFFFF;
-}
-
-body.dark-mode footer .footer-section h3 {
-    color: #000000;
-}
-
-
 a:focus-visible,
-button:focus-visible,
-.theme-toggle:focus-visible,
-.view-btn:focus-visible,
-input:focus-visible,
-select:focus-visible,
-textarea:focus-visible {
+button:focus-visible {
     outline: 3px solid #FFD700;
     outline-offset: 2px;
 }
