@@ -12,8 +12,8 @@
   --color-dark-gray:#444444;
   --color-dark-mode-text:#FFFFFF;
   --color-dark-mode-primary:#CCE5FF;
-  --color-toggle-hover-light:#004d99; /* Fix hover contrast in light mode */
-  --color-toggle-hover-dark:#CCE5FF;  /* Fix hover contrast in dark mode */
+  --color-toggle-hover-light:#004d99;
+  --color-toggle-hover-dark:#CCE5FF;
 }
 
 *{margin:0;padding:0;box-sizing:border-box}
@@ -152,8 +152,7 @@ header{
 }
 
 .theme-option .theme-icon{
-  font-size:1.2rem;
-  color:var(--color-primary-dark); /* fixes contrast in light mode */
+  color:var(--color-primary-dark);
 }
 
 .mobile-menu-toggle{
@@ -346,7 +345,7 @@ body.dark-mode .theme-toggle{
   color:var(--color-dark-mode-primary)
 }
 body.dark-mode .theme-toggle .theme-icon{
-  color:var(--color-dark-mode-primary); /* fixes contrast in dark mode */
+  color:var(--color-dark-mode-primary);
 }
 body.dark-mode .theme-toggle:hover{
   background-color:#003366;
@@ -424,9 +423,12 @@ a:focus-visible,button:focus-visible{outline:3px solid #FFD700;outline-offset:2p
 .hero-section{position:relative;width:100%;height:400px;overflow:hidden}
 .hero-image{width:100%;height:100%;object-fit:cover;object-position:center}
 .hero-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(to right,rgba(0,51,102,.7) 0%,rgba(0,51,102,.4) 100%);display:flex;align-items:center;justify-content:flex-start}
-.hero-content{max-width:1200px;width:100%;margin:0 auto;padding:0 2rem;color:var(--color-light-text)}
+
+/* COLOR CONTRAST FIX: Change base text color to dark, then set h2/p back to light on the dark overlay */
+.hero-content{max-width:1200px;width:100%;margin:0 auto;padding:0 2rem;color:var(--color-dark-text)}
 .hero-content h2{font-size:2.5rem;margin-bottom:1rem;font-weight:700;text-shadow:2px 2px 4px rgba(0,0,0,.5);color:var(--color-light-text)}
-.hero-content p{font-size:1.2rem;margin-bottom:1.5rem;max-width:600px;line-height:1.6;text-shadow:1px 1px 2px rgba(0,0,0,.5)}
+.hero-content p{font-size:1.2rem;margin-bottom:1.5rem;max-width:600px;line-height:1.6;text-shadow:1px 1px 2px rgba(0,0,0,.5);color:var(--color-light-text)}
+
 .cta-button{display:inline-block;padding:.8rem 2rem;background-color:var(--color-primary-dark);color:var(--color-light-text);text-decoration:none;font-weight:700;font-size:1rem;border-radius:5px;transition:all .3s;border:2px solid var(--color-nav-hover)}
 .cta-button:hover{background-color:var(--color-nav-hover);transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,77,153,.4)}
 
@@ -436,6 +438,7 @@ a:focus-visible,button:focus-visible{outline:3px solid #FFD700;outline-offset:2p
 .page-title{font-size:2rem;color:#003366;margin-bottom:2rem}
 .info-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:1.5rem;margin-bottom:3rem}
 .info-card{background-color:var(--color-light-gray);border-radius:10px;padding:1.5rem;box-shadow:0 4px 12px rgba(0,0,0,.1)}
+/* COLOR CONTRAST FIX: H3 text is white, which works well against the dark gradient */
 .info-card h3{font-size:1.3rem;color:var(--color-light-text);background:linear-gradient(135deg,var(--color-accent),var(--color-primary-dark));margin:-1.5rem -1.5rem 1.5rem -1.5rem;padding:.8rem 1.5rem;border-radius:10px 10px 0 0;font-weight:700}
 
 .events-list{display:flex;flex-direction:column;gap:1.5rem}
@@ -483,7 +486,6 @@ a:focus-visible,button:focus-visible{outline:3px solid #FFD700;outline-offset:2p
 
 /* Dark mode */
 
-
 body.dark-mode .page-title,body.dark-mode .spotlights-title{
     color:#CCE5FF; 
 }
@@ -518,30 +520,29 @@ body.dark-mode .spotlight-image-wrapper{border-color:#2C2C2C}
 body.dark-mode .spotlight-header{border-bottom-color:#2C2C2C}
 body.dark-mode .forecast-item{background-color:var(--color-dark-bg)}
 
-
-body.dark-mode a:any-link {
-    color: #FFFFFF;
-    text-decoration: underline;
+/* REPEATED RULES/DECLARATIONS FIX: Consolidated dark mode link styles */
+body.dark-mode a {
+    color: var(--color-dark-mode-text); 
+    text-decoration: none; 
 }
 
 body.dark-mode a:hover,
 body.dark-mode a:active,
 body.dark-mode a:focus {
-    color: #FFFFFF;
-    text-decoration: underline;
+    color: var(--color-dark-mode-text); 
+    text-decoration: underline; 
 }
 
-body.dark-mode .spotlight-contact a:any-link {
-    color: #FFFFFF;
-    text-decoration: underline;
+body.dark-mode .spotlight-contact a {
+    color: var(--color-dark-mode-text); 
+    text-decoration: underline; 
 }
+
 body.dark-mode .spotlight-contact a:hover {
-    color: #FFFFFFFF;
+    color: var(--color-dark-mode-text); 
+    text-decoration: none; 
 }
-
-body.dark-mode .spotlight-contact a:hover{
-    color:#FFFFFFFF; 
-}
+/* Removed multiple redundant/duplicate dark-mode link rules */
 
 /* Responsive */
 @media(max-width:768px){
