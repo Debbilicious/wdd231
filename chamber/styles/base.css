@@ -419,3 +419,150 @@ body.dark-mode .footer-section a:hover{color:var(--color-accent)}
 a:focus-visible,button:focus-visible{outline:3px solid #FFD700;outline-offset:2px}
 
 
+/* --- HOME PAGE - FINAL LAYOUT, COLOR, AND IMAGE FIXES (100px SQUARE) --- */
+
+.hero-section{position:relative;width:100%;height:400px;overflow:hidden}
+.hero-image{width:100%;height:100%;object-fit:cover;object-position:center}
+.hero-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(to right,rgba(0,51,102,.7) 0%,rgba(0,51,102,.4) 100%);display:flex;align-items:center;justify-content:flex-start}
+.hero-content{max-width:1200px;width:100%;margin:0 auto;padding:0 2rem;color:var(--color-light-text)}
+.hero-content h2{font-size:2.5rem;margin-bottom:1rem;font-weight:700;text-shadow:2px 2px 4px rgba(0,0,0,.5);color:var(--color-light-text)}
+.hero-content p{font-size:1.2rem;margin-bottom:1.5rem;max-width:600px;line-height:1.6;text-shadow:1px 1px 2px rgba(0,0,0,.5)}
+.cta-button{display:inline-block;padding:.8rem 2rem;background-color:var(--color-primary-dark);color:var(--color-light-text);text-decoration:none;font-weight:700;font-size:1rem;border-radius:5px;transition:all .3s;border:2px solid var(--color-nav-hover)}
+.cta-button:hover{background-color:var(--color-nav-hover);transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,77,153,.4)}
+
+.home-container{max-width:1200px;margin:0 auto;padding:2rem 2rem 3rem}
+
+
+.page-title{font-size:2rem;color:#003366;margin-bottom:2rem}
+.info-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:1.5rem;margin-bottom:3rem}
+.info-card{background-color:var(--color-light-gray);border-radius:10px;padding:1.5rem;box-shadow:0 4px 12px rgba(0,0,0,.1)}
+.info-card h3{font-size:1.3rem;color:var(--color-light-text);background:linear-gradient(135deg,var(--color-accent),var(--color-primary-dark));margin:-1.5rem -1.5rem 1.5rem -1.5rem;padding:.8rem 1.5rem;border-radius:10px 10px 0 0;font-weight:700}
+
+.events-list{display:flex;flex-direction:column;gap:1.5rem}
+.event-item h4{color:var(--color-primary-dark);font-size:1.1rem;margin-bottom:.5rem}
+.event-date,.event-time,.event-location{font-size:.9rem;color:var(--color-dark-gray);margin-bottom:.3rem}
+
+.current-weather-content{display:flex;flex-direction:column;gap:1rem}
+.weather-main-display{display:flex;align-items:center;gap:1rem}
+.weather-icon-wrapper{flex-shrink:0}
+.weather-icon-large{width:80px;height:80px}
+.weather-info{flex:1;text-align:left}
+.temperature-large{font-size:2.5rem;font-weight:700;color:var(--color-primary-dark);line-height:1;margin-bottom:.3rem}
+.weather-description-main{font-size:1.1rem;color:var(--color-dark-gray);font-weight:600;text-transform:capitalize}
+.weather-details-list{text-align:left}
+.weather-details-list p{font-size:.9rem;color:var(--color-dark-gray);margin-bottom:.4rem}
+.weather-details-list strong{color:var(--color-primary-dark)}
+
+.forecast-list{display:flex;flex-direction:column;gap:1rem}
+.forecast-item{display:flex;justify-content:space-between;align-items:center;padding:.8rem;background-color:var(--color-light-bg);border-radius:8px}
+.forecast-day-name{font-weight:700;color:var(--color-primary-dark);font-size:1rem}
+.forecast-temp{font-size:1.2rem;font-weight:700;color:var(--color-primary-dark)}
+
+.spotlights-section{margin-bottom:2rem}
+/* LIGHT MODE TITLE: Dark Blue (#003366) */
+.spotlights-title{font-size:2rem;color:#003366;margin-bottom:2rem;text-align:center}
+.spotlights-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+.spotlight-card{background-color:var(--color-light-gray);border-radius:10px;padding:1.5rem;box-shadow:0 4px 12px rgba(0,0,0,.1);display:flex;flex-direction:column;gap:1rem;transition:transform .3s,box-shadow .3s}
+.spotlight-card:hover{transform:translateY(-5px);box-shadow:0 8px 20px rgba(0,0,0,.2)}
+.spotlight-header{text-align:center;padding-bottom:1rem;border-bottom:2px solid #E0E0E0}
+.spotlight-name{font-size:1.2rem;color:var(--color-primary-dark);font-weight:700;margin:0 0 .5rem 0}
+.spotlight-tagline{font-size:.9rem;color:var(--color-dark-text);font-weight:600;margin:0}
+
+/* 100px Square Image Layout */
+.spotlight-content{display:grid;grid-template-columns:100px 1fr;gap:1rem;align-items:start}
+.spotlight-image-wrapper{width:100px;height:100px;border:3px solid #E0E0E0;border-radius:5px;overflow:hidden;flex-shrink:0}
+.spotlight-image{width:100%;height:100%;object-fit:cover}
+
+.spotlight-info{flex:1;display:flex;flex-direction:column;gap:.5rem}
+.spotlight-contact{text-align:left}
+.spotlight-contact p{font-size:.85rem;color:var(--color-dark-text);margin-bottom:.4rem;line-height:1.4}
+.spotlight-contact strong{color:var(--color-primary-dark);font-size:.8rem}
+.spotlight-contact a{color:var(--color-primary-dark);text-decoration:none;word-break:break-word}
+.spotlight-contact a:hover{color:var(--color-nav-hover);text-decoration:underline}
+.spotlight-badge{margin-top:auto}
+
+/* Dark mode */
+
+
+body.dark-mode .page-title,body.dark-mode .spotlights-title{
+    color:#CCE5FF; 
+}
+
+body.dark-mode .info-card{background-color:var(--color-secondary-dark);box-shadow:0 4px 12px rgba(255,255,255,.1)}
+
+
+body.dark-mode .event-item h4,
+body.dark-mode .temperature-large,
+body.dark-mode .forecast-day-name,
+body.dark-mode .forecast-temp,
+body.dark-mode .spotlight-name,
+body.dark-mode .weather-details-list strong,
+body.dark-mode .spotlight-contact strong {
+    color:#CCE5FF; 
+}
+
+
+body.dark-mode .event-date,
+body.dark-mode .event-time,
+body.dark-mode .event-location,
+body.dark-mode .weather-description-main,
+body.dark-mode .weather-details-list p,
+body.dark-mode .spotlight-tagline,
+body.dark-mode .spotlight-contact p {
+    color:var(--color-dark-mode-text); 
+}
+
+body.dark-mode .spotlight-card{background-color:var(--color-secondary-dark);box-shadow:0 4px 12px rgba(255,255,255,.1)}
+body.dark-mode .spotlight-card:hover{box-shadow:0 8px 20px rgba(255,255,255,.2)}
+body.dark-mode .spotlight-image-wrapper{border-color:#2C2C2C}
+body.dark-mode .spotlight-header{border-bottom-color:#2C2C2C}
+body.dark-mode .forecast-item{background-color:var(--color-dark-bg)}
+
+
+body.dark-mode a:any-link {
+    color: #FFFFFF;
+    text-decoration: underline;
+}
+
+body.dark-mode a:hover,
+body.dark-mode a:active,
+body.dark-mode a:focus {
+    color: #FFFFFF;
+    text-decoration: underline;
+}
+
+body.dark-mode .spotlight-contact a:any-link {
+    color: #FFFFFF;
+    text-decoration: underline;
+}
+body.dark-mode .spotlight-contact a:hover {
+    color: #FFFFFFFF;
+}
+
+body.dark-mode .spotlight-contact a:hover{
+    color:#FFFFFFFF; 
+}
+
+/* Responsive */
+@media(max-width:768px){
+  .hero-section{height:300px}
+  .hero-content h2{font-size:1.5rem}
+  .hero-content p{font-size:1rem}
+  .cta-button{padding:.7rem 1.5rem;font-size:.9rem}
+  .home-container{padding:1rem 1rem 2rem}
+  .page-title{font-size:1.5rem}
+  .info-grid{grid-template-columns:1fr;gap:1.5rem}
+  .spotlights-grid{grid-template-columns:1fr;gap:1.5rem}
+  .spotlight-card{padding:1rem}
+  /* Updated mobile size for 80px square image */
+  .spotlight-content{grid-template-columns:80px 1fr;gap:.8rem}
+  .spotlight-image-wrapper{width:80px;height:80px;border-width:2px}
+  .spotlight-name{font-size:1rem}
+  .spotlight-tagline{font-size:.8rem}
+  .spotlight-contact p{font-size:.75rem}
+  .spotlight-contact strong{font-size:.7rem}
+}
+@media(min-width:769px) and (max-width:1024px){
+  .info-grid{grid-template-columns:1fr;gap:1.5rem}
+  .spotlights-grid{grid-template-columns:repeat(2,1fr)}
+}
