@@ -279,9 +279,19 @@ nav a:hover,nav a.active{
 .member-details p{display:flex;align-items:center;gap:.5rem;margin-bottom:.5rem;font-size:.95rem}
 .member-details a{color:var(--color-dark-gray);text-decoration:none;transition:color .3s}
 .member-details a:hover{color:var(--color-primary-dark);text-decoration:underline}
-.membership-badge{display:inline-flex;align-items:center;gap:.4rem;margin-top:1rem;padding:.5rem 1rem;
-border-radius:20px;font-size:.85rem;font-weight:700;text-transform:uppercase;
-color:var(--color-dark-text);border:2px solid #E0E0E0;background-color:var(--color-light-gray)}
+.membership-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:.4rem;
+  margin-top:1rem;
+  padding:.5rem 1rem;
+  border-radius:20px;
+  font:700 .85rem/1 sans-serif;
+  text-transform:uppercase;
+  color:var(--color-dark-text);
+  border:2px solid #E0E0E0;
+  background-color:var(--color-light-gray)
+}
 .badge-diamond{background:linear-gradient(135deg,#B9F2FF,#E0FFFF);border-color:#A0D2E0}
 .badge-gold{background-color:#FFD700;border-color:#E0C000}
 .badge-silver{background-color:#A0A0A0;border-color:#808080}
@@ -314,14 +324,14 @@ footer{
 .footer-section a:hover{color:var(--color-accent);text-decoration:underline}
 .social-icons{display:flex;gap:1rem;margin-top:1rem;flex-wrap:wrap}
 .social-icons a{
-  display:flex;
-  align-items:center;
-  justify-content:center;
   width:50px;
   height:50px;
   border-radius:50%;
+  box-shadow:0 2px 5px rgba(0,0,0,.1);
+  display:flex;
+  align-items:center;
+  justify-content:center;
   transition:transform .3s,opacity .3s;
-  box-shadow:0 2px 5px rgba(0,0,0,.1)
 }
 .social-icons a:hover{transform:scale(1.15);opacity:.9}
 .social-icons a img{width:32px;height:32px;filter:brightness(0) invert(1)}
@@ -379,67 +389,90 @@ body.dark-mode .member-details a:hover{color:var(--color-dark-mode-primary)}
 body.dark-mode .footer-section a{color:var(--color-dark-mode-text)}
 body.dark-mode .footer-section a:hover{color:var(--color-accent)}
 
-/* MOBILE & TABLET */
-@media(max-width:768px){
-  .header-container{padding:1rem}
-  .logo{width:60px;height:60px}
-  .mobile-menu-toggle{display:flex}
-  nav ul{padding:0}
-  nav{max-height:0;overflow:hidden;transition:max-height .3s ease-in-out;background-color:var(--color-light-gray)}
-  nav.active{max-height:500px;background-color:var(--color-light-bg)}
-  nav ul{flex-direction:column;padding:1rem}
-  nav a{padding:.75rem 1rem;text-align:left}
-  nav.active a,nav.active a:link,nav.active a:visited{color:var(--color-dark-text);background-color:transparent}
-  nav.active a:hover,nav.active a.active{background-color:var(--color-nav-hover);color:var(--color-light-text)}
-  .directory-container{padding:0 1rem}
-  .directory-header{flex-direction:column;align-items:flex-start;gap:1rem}
-  #memberDirectory.member-grid{grid-template-columns:repeat(2,1fr);gap:.75rem}
-  .member-grid .member-card{overflow:hidden}
-  .member-grid .member-image{height:100px}
-  .member-grid .member-info{padding:.6rem}
-  .member-grid .member-info h3{font-size:.8rem;margin-bottom:.2rem;line-height:1.1}
-  .member-grid .member-tagline{font-size:.7rem;margin-bottom:.4rem;font-weight:500}
-  .member-grid .member-details p,.member-grid .member-details a{font-size:.7rem;margin-bottom:.2rem}
-  .member-grid .membership-badge{font-size:.6rem;padding:.3rem .6rem;margin-top:.5rem}
-  .member-list .member-card{grid-template-columns:80px 1fr;gap:.75rem}
-  .member-list .member-image{width:80px;height:80px}
-  .member-list .member-info{padding:.5rem 0}
-  .footer-container{grid-template-columns:1fr;gap:1.5rem}
-  .social-icons a{width:45px;height:45px}
-  .social-icons a img{width:28px;height:28px}
+/* Consolidated Dark Mode Links (Fixes 'Repeated Declarations' audit warning) */
+body.dark-mode a,
+body.dark-mode .spotlight-contact a,
+body.dark-mode .spotlight-contact a:hover {
+    color: var(--color-dark-mode-text); 
+    text-decoration: none; 
 }
-@media (min-width: 769px) and (max-width: 1024px) {
-  #memberDirectory.member-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+body.dark-mode a:hover,
+body.dark-mode a:active,
+body.dark-mode a:focus {
+    color: var(--color-dark-mode-text); 
+    text-decoration: underline; 
+}
+body.dark-mode .spotlight-contact a {
+    text-decoration: underline; 
+}
+body.dark-mode .spotlight-contact a:hover {
+    text-decoration: none; 
 }
 
 /* FOCUS */
 a:focus-visible,button:focus-visible{outline:3px solid #FFD700;outline-offset:2px}
 
 
-/* --- HOME PAGE - FINAL LAYOUT, COLOR, AND IMAGE FIXES (100px SQUARE) --- */
+/* --- HOME PAGE STYLES --- */
 
 .hero-section{position:relative;width:100%;height:400px;overflow:hidden}
 .hero-image{width:100%;height:100%;object-fit:cover;object-position:center}
 .hero-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(to right,rgba(0,51,102,.7) 0%,rgba(0,51,102,.4) 100%);display:flex;align-items:center;justify-content:flex-start}
 
-/* COLOR CONTRAST FIX: Change base text color to dark, then set h2/p back to light on the dark overlay */
-.hero-content{max-width:1200px;width:100%;margin:0 auto;padding:0 2rem;color:var(--color-dark-text)}
-.hero-content h2{font-size:2.5rem;margin-bottom:1rem;font-weight:700;text-shadow:2px 2px 4px rgba(0,0,0,.5);color:var(--color-light-text)}
-.hero-content p{font-size:1.2rem;margin-bottom:1.5rem;max-width:600px;line-height:1.6;text-shadow:1px 1px 2px rgba(0,0,0,.5);color:var(--color-light-text)}
+.hero-content{
+  max-width:1200px;
+  width:100%;
+  margin:0 auto;
+  padding:0 2rem;
+  color:var(--color-dark-text); 
+}
 
-.cta-button{display:inline-block;padding:.8rem 2rem;background-color:var(--color-primary-dark);color:var(--color-light-text);text-decoration:none;font-weight:700;font-size:1rem;border-radius:5px;transition:all .3s;border:2px solid var(--color-nav-hover)}
+/* COLOR FIX: Ensures H2 and P text is white/light for high contrast over the dark overlay */
+.hero-content h2{
+  font-size:2.5rem;
+  margin-bottom:1rem;
+  font-weight:700;
+  text-shadow:2px 2px 4px rgba(0,0,0,.5);
+  color:var(--color-light-text); 
+}
+.hero-content p{
+  font-size:1.2rem;
+  margin-bottom:1.5rem;
+  max-width:600px;
+  line-height:1.6;
+  text-shadow:1px 1px 2px rgba(0,0,0,.5);
+  color:var(--color-light-text);
+}
+
+.cta-button{
+  display:inline-block;
+  padding:.8rem 2rem;
+  font:700 1rem/1 sans-serif; 
+  background-color:var(--color-primary-dark);
+  color:var(--color-light-text); 
+  text-decoration:none;
+  border-radius:5px;
+  transition:all .3s;
+  border:2px solid var(--color-nav-hover)
+}
 .cta-button:hover{background-color:var(--color-nav-hover);transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,77,153,.4)}
 
 .home-container{max-width:1200px;margin:0 auto;padding:2rem 2rem 3rem}
 
 
-.page-title{font-size:2rem;color:#003366;margin-bottom:2rem}
+.page-title{font-size:2rem;color:var(--color-primary-dark);margin-bottom:2rem}
 .info-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:1.5rem;margin-bottom:3rem}
 .info-card{background-color:var(--color-light-gray);border-radius:10px;padding:1.5rem;box-shadow:0 4px 12px rgba(0,0,0,.1)}
-/* COLOR CONTRAST FIX: H3 text is white, which works well against the dark gradient */
-.info-card h3{font-size:1.3rem;color:var(--color-light-text);background:linear-gradient(135deg,var(--color-accent),var(--color-primary-dark));margin:-1.5rem -1.5rem 1.5rem -1.5rem;padding:.8rem 1.5rem;border-radius:10px 10px 0 0;font-weight:700}
+/* COLOR FIX: Ensures H3 text is white/light for high contrast over the dark gradient background */
+.info-card h3{
+  font-size:1.3rem;
+  color:var(--color-light-text);
+  background:linear-gradient(135deg,var(--color-accent),var(--color-primary-dark));
+  margin:-1.5rem -1.5rem 1.5rem -1.5rem;
+  padding:.8rem 1.5rem;
+  border-radius:10px 10px 0 0;
+  font-weight:700
+}
 
 .events-list{display:flex;flex-direction:column;gap:1.5rem}
 .event-item h4{color:var(--color-primary-dark);font-size:1.1rem;margin-bottom:.5rem}
@@ -462,10 +495,25 @@ a:focus-visible,button:focus-visible{outline:3px solid #FFD700;outline-offset:2p
 .forecast-temp{font-size:1.2rem;font-weight:700;color:var(--color-primary-dark)}
 
 .spotlights-section{margin-bottom:2rem}
-/* LIGHT MODE TITLE: Dark Blue (#003366) */
-.spotlights-title{font-size:2rem;color:#003366;margin-bottom:2rem;text-align:center}
-.spotlights-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
-.spotlight-card{background-color:var(--color-light-gray);border-radius:10px;padding:1.5rem;box-shadow:0 4px 12px rgba(0,0,0,.1);display:flex;flex-direction:column;gap:1rem;transition:transform .3s,box-shadow .3s}
+.spotlights-title{font-size:2rem;color:var(--color-primary-dark);margin-bottom:2rem;text-align:center}
+
+/* FIX: Default 3-column layout for desktop screens */
+.spotlights-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 1.5rem;
+}
+
+.spotlight-card{
+  background-color:var(--color-light-gray);
+  border-radius:10px;
+  box-shadow:0 4px 12px rgba(0,0,0,.1);
+  padding:1.5rem;
+  display:flex;
+  flex-direction:column;
+  gap:1rem;
+  transition:transform .3s,box-shadow .3s
+}
 .spotlight-card:hover{transform:translateY(-5px);box-shadow:0 8px 20px rgba(0,0,0,.2)}
 .spotlight-header{text-align:center;padding-bottom:1rem;border-bottom:2px solid #E0E0E0}
 .spotlight-name{font-size:1.2rem;color:var(--color-primary-dark);font-weight:700;margin:0 0 .5rem 0}
@@ -473,97 +521,96 @@ a:focus-visible,button:focus-visible{outline:3px solid #FFD700;outline-offset:2p
 
 /* 100px Square Image Layout */
 .spotlight-content{display:grid;grid-template-columns:100px 1fr;gap:1rem;align-items:start}
-.spotlight-image-wrapper{width:100px;height:100px;border:3px solid #E0E0E0;border-radius:5px;overflow:hidden;flex-shrink:0}
+.spotlight-image-wrapper{
+  width:100px;
+  height:100px;
+  border:3px solid #E0E0E0;
+  border-radius:5px;
+  overflow:hidden;
+  flex-shrink:0
+}
 .spotlight-image{width:100%;height:100%;object-fit:cover}
 
 .spotlight-info{flex:1;display:flex;flex-direction:column;gap:.5rem}
 .spotlight-contact{text-align:left}
-.spotlight-contact p{font-size:.85rem;color:var(--color-dark-text);margin-bottom:.4rem;line-height:1.4}
+.spotlight-contact p{font:normal .85rem/1.4 sans-serif;color:var(--color-dark-text);margin-bottom:.4rem}
 .spotlight-contact strong{color:var(--color-primary-dark);font-size:.8rem}
 .spotlight-contact a{color:var(--color-primary-dark);text-decoration:none;word-break:break-word}
 .spotlight-contact a:hover{color:var(--color-nav-hover);text-decoration:underline}
 .spotlight-badge{margin-top:auto}
 
-/* Dark mode */
 
-body.dark-mode .page-title,body.dark-mode .spotlights-title{
-    color:#CCE5FF; 
-}
-
-body.dark-mode .info-card{background-color:var(--color-secondary-dark);box-shadow:0 4px 12px rgba(255,255,255,.1)}
-
-
-body.dark-mode .event-item h4,
-body.dark-mode .temperature-large,
-body.dark-mode .forecast-day-name,
-body.dark-mode .forecast-temp,
-body.dark-mode .spotlight-name,
-body.dark-mode .weather-details-list strong,
-body.dark-mode .spotlight-contact strong {
-    color:#CCE5FF; 
-}
-
-
-body.dark-mode .event-date,
-body.dark-mode .event-time,
-body.dark-mode .event-location,
-body.dark-mode .weather-description-main,
-body.dark-mode .weather-details-list p,
-body.dark-mode .spotlight-tagline,
-body.dark-mode .spotlight-contact p {
-    color:var(--color-dark-mode-text); 
-}
-
-body.dark-mode .spotlight-card{background-color:var(--color-secondary-dark);box-shadow:0 4px 12px rgba(255,255,255,.1)}
-body.dark-mode .spotlight-card:hover{box-shadow:0 8px 20px rgba(255,255,255,.2)}
+/* DARK MODE (Home Page Overrides) */
+body.dark-mode .page-title{color:var(--color-dark-mode-primary)}
+body.dark-mode .info-card{background-color:var(--color-secondary-dark)}
+body.dark-mode .events-list .event-item h4{color:var(--color-dark-mode-primary)}
+body.dark-mode .events-list .event-date,body.dark-mode .events-list .event-time,body.dark-mode .events-list .event-location{color:#E0E0E0}
+body.dark-mode .weather-info .temperature-large{color:var(--color-dark-mode-primary)}
+body.dark-mode .weather-info .weather-description-main{color:#E0E0E0}
+body.dark-mode .weather-details-list p{color:#E0E0E0}
+body.dark-mode .weather-details-list strong{color:var(--color-dark-mode-primary)}
+body.dark-mode .forecast-item{background-color:#2C2C2C}
+body.dark-mode .forecast-day-name,body.dark-mode .forecast-temp{color:var(--color-dark-mode-primary)}
+body.dark-mode .spotlights-title{color:var(--color-dark-mode-primary)}
+body.dark-mode .spotlight-card{background-color:var(--color-secondary-dark)}
+body.dark-mode .spotlight-header{border-bottom:2px solid #2C2C2C}
+body.dark-mode .spotlight-name{color:var(--color-dark-mode-primary)}
+body.dark-mode .spotlight-tagline{color:#E0E0E0}
 body.dark-mode .spotlight-image-wrapper{border-color:#2C2C2C}
-body.dark-mode .spotlight-header{border-bottom-color:#2C2C2C}
-body.dark-mode .forecast-item{background-color:var(--color-dark-bg)}
+body.dark-mode .spotlight-contact p{color:#E0E0E0}
+body.dark-mode .spotlight-contact strong{color:var(--color-dark-mode-primary)}
 
-/* REPEATED RULES/DECLARATIONS FIX: Consolidated dark mode link styles */
-body.dark-mode a {
-    color: var(--color-dark-mode-text); 
-    text-decoration: none; 
-}
 
-body.dark-mode a:hover,
-body.dark-mode a:active,
-body.dark-mode a:focus {
-    color: var(--color-dark-mode-text); 
-    text-decoration: underline; 
-}
-
-body.dark-mode .spotlight-contact a {
-    color: var(--color-dark-mode-text); 
-    text-decoration: underline; 
-}
-
-body.dark-mode .spotlight-contact a:hover {
-    color: var(--color-dark-mode-text); 
-    text-decoration: none; 
-}
-/* Removed multiple redundant/duplicate dark-mode link rules */
-
-/* Responsive */
+/* MOBILE & TABLET */
 @media(max-width:768px){
+  .header-container{padding:1rem}
+  .logo{width:60px;height:60px}
+  .mobile-menu-toggle{display:flex}
+  nav ul{padding:0}
+  nav{max-height:0;overflow:hidden;transition:max-height .3s ease-in-out;background-color:var(--color-light-gray)}
+  nav.active{max-height:500px;background-color:var(--color-light-bg)}
+  nav ul{flex-direction:column;padding:1rem}
+  nav a{padding:.75rem 1rem;text-align:left}
+  nav.active a,nav.active a:link,nav.active a:visited{color:var(--color-dark-text);background-color:transparent}
+  nav.active a:hover,nav.active a.active{background-color:var(--color-nav-hover);color:var(--color-light-text)}
+  .directory-container{padding:0 1rem}
+  .directory-header{flex-direction:column;align-items:flex-start;gap:1rem}
+  #memberDirectory.member-grid{grid-template-columns:repeat(2,1fr);gap:.75rem}
+  .member-grid .member-card{overflow:hidden}
+  .member-grid .member-image{height:100px}
+  .member-grid .member-info{padding:.6rem}
+  .member-grid .member-info h3{font:700 .8rem/1.1 Poppins,sans-serif;margin-bottom:.2rem}
+  .member-grid .member-tagline{font:500 .7rem/1.2 sans-serif;margin-bottom:.4rem}
+  .member-grid .member-details p,.member-grid .member-details a{font-size:.7rem;margin-bottom:.2rem}
+  .member-grid .membership-badge{font-size:.6rem;padding:.3rem .6rem;margin-top:.5rem}
+  .member-list .member-card{grid-template-columns:80px 1fr;gap:.75rem}
+  .member-list .member-image{width:80px;height:80px;object-fit:cover;border-radius:10px}
+  .member-list .member-info{padding:.5rem 0}
+  .footer-container{grid-template-columns:1fr;gap:1.5rem}
+  .social-icons a{width:45px;height:45px}
+  .social-icons a img{width:28px;height:28px}
+
   .hero-section{height:300px}
   .hero-content h2{font-size:1.5rem}
   .hero-content p{font-size:1rem}
-  .cta-button{padding:.7rem 1.5rem;font-size:.9rem}
+  .cta-button{padding:.7rem 1.5rem;font:700 .9rem/1 sans-serif}
   .home-container{padding:1rem 1rem 2rem}
   .page-title{font-size:1.5rem}
   .info-grid{grid-template-columns:1fr;gap:1.5rem}
-  .spotlights-grid{grid-template-columns:1fr;gap:1.5rem}
+  
+  /* MOBILE FIX: Force to 1 column */
+  .spotlights-grid{grid-template-columns:1fr;gap:1.5rem} 
+  
   .spotlight-card{padding:1rem}
-  /* Updated mobile size for 80px square image */
   .spotlight-content{grid-template-columns:80px 1fr;gap:.8rem}
-  .spotlight-image-wrapper{width:80px;height:80px;border-width:2px}
+  .spotlight-image-wrapper{width:80px;height:80px;border:2px solid #E0E0E0;border-radius:5px}
   .spotlight-name{font-size:1rem}
   .spotlight-tagline{font-size:.8rem}
   .spotlight-contact p{font-size:.75rem}
   .spotlight-contact strong{font-size:.7rem}
 }
 @media(min-width:769px) and (max-width:1024px){
+  /* TABLET FIX: Force to 2 columns */
   .info-grid{grid-template-columns:1fr;gap:1.5rem}
   .spotlights-grid{grid-template-columns:repeat(2,1fr)}
 }
