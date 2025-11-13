@@ -32,7 +32,7 @@ body{
 }
 
 h1{font-family:'Poppins',sans-serif;font-weight:700;color:var(--color-dark-text)}
-/* General h2/h3 fix for light mode contrast */
+
 h2, h3{
     font-family:'Poppins',sans-serif;
     font-weight:700;
@@ -41,7 +41,7 @@ h2, h3{
 main{flex:1}
 a:focus-visible,button:focus-visible{outline:3px solid #FFD700;outline-offset:2px}
 
-/* ===== 2. HEADER & NAV ===== */
+/*  HEADER & NAV ===== */
 header{
   background-color:var(--color-light-gray);
   box-shadow:0 2px 8px rgba(0,0,0,.1);
@@ -126,7 +126,7 @@ nav a{
 }
 nav a:hover,nav a.active{background-color:var(--color-nav-hover);color:var(--color-light-text);font-weight:600}
 
-/* ===== 3. DIRECTORY PAGE STYLES ===== */
+/* ===== DIRECTORY PAGE STYLES ===== */
 .directory-container{max-width:1200px;margin:2rem auto;padding:0 2rem}
 .directory-header{
   display:flex;justify-content:space-between;align-items:center;
@@ -181,7 +181,7 @@ nav a:hover,nav a.active{background-color:var(--color-nav-hover);color:var(--col
 .member-list .member-image{width:150px;height:150px;object-fit:cover;border-radius:10px}
 .member-list .member-info{padding:1.5rem; padding-right: 0;} 
 
-/* ===== 4. FOOTER ===== */
+/* ===== FOOTER ===== */
 footer{
   background-color:var(--color-primary-dark); 
   color:var(--color-light-gray);
@@ -216,8 +216,6 @@ footer{
 
 .last-modified{font-size:.85rem;color:var(--color-light-gray);margin-top:1rem}
 
-/* ===== 5. HOME PAGE STYLES (CONTRAST & LAYOUT FIXES) ===== */
-
 .hero-section{position:relative;width:100%;height:400px;overflow:hidden}
 .hero-image{width:100%;height:100%;object-fit:cover;object-position:center}
 .hero-overlay{
@@ -231,12 +229,12 @@ footer{
 .hero-content h2{
   font-size:2.5rem;margin-bottom:1rem;font-weight:700;
   text-shadow:2px 2px 4px rgba(0,0,0,.5);
-  color:black; 
+  color:#000000; 
 }
 .hero-content p{
   font-size:1.2rem;margin-bottom:1.5rem;max-width:600px;
   line-height:1.6;text-shadow:1px 1px 2px rgba(0,0,0,.5);
-  color:black;
+  color:#000000;
 }
 .cta-button{
   display:inline-block;padding:.8rem 2rem;font:700 1rem/1 sans-serif; 
@@ -248,7 +246,6 @@ footer{
 
 .home-container{max-width:1200px;margin:0 auto;padding:2rem 2rem 3rem}
 
-/* FINAL FIX: h2.page-title contrast issue - Set for Dark Blue text on Light background */
 .page-title{
     font-size:2rem;
     color:var(--color-primary-dark); 
@@ -299,15 +296,14 @@ footer{
 }
 .spotlight-image{width:100%;height:100%;object-fit:cover}
 
-/* FINAL FIX: Spotlight Wrapping - using comprehensive controls to fix link cut-off */
 .spotlight-info{
     flex:1;
     display:flex;
     flex-direction:column;
     gap:.5rem;
-    word-break: break-all; /* Aggressively break words/URLs */
-    overflow-wrap: break-word; /* Standard wrap policy */
-    hyphens: auto; /* Allow hyphenation */
+    word-break: break-all; 
+    overflow-wrap: break-word; 
+    hyphens: auto; 
 }
 .spotlight-contact{text-align:left}
 
@@ -331,11 +327,11 @@ footer{
 .spotlight-badge{margin-top:auto}
 
 
-/* ===== 6. DARK MODE ===== */
+/* ===== DARK MODE ===== */
 body.dark-mode{
   background-color:var(--color-dark-bg);color:var(--color-light-text); 
 }
-/* CONSOLIDATED DARK MODE BACKGROUNDS & BORDERS */
+
 body.dark-mode header,
 body.dark-mode .info-card,
 body.dark-mode .member-card,
@@ -349,7 +345,7 @@ body.dark-mode .member-image, body.dark-mode .forecast-item:nth-child(even) {
     background-color: #2C2C2C;
 }
 
-/* CONSOLIDATED DARK MODE PRIMARY ACCENTS & TEXT */
+
 body.dark-mode h1, 
 body.dark-mode .logo-text h1,
 body.dark-mode .theme-toggle,
@@ -366,11 +362,11 @@ body.dark-mode .spotlight-name {
     border-color: var(--color-dark-mode-primary);
 }
 
-/* Override default h2/h3 colors for dark mode */
+
 body.dark-mode h2, body.dark-mode h3{
     color: var(--color-dark-mode-primary);
 }
-/* Ensure page title gets light color in dark mode */
+
 body.dark-mode .page-title {
     color: var(--color-dark-mode-primary);
 }
@@ -380,7 +376,7 @@ body.dark-mode .events-list .event-item h4 {
     color: var(--color-dark-mode-primary); 
 }
 
-/* CONSOLIDATED DARK MODE SECONDARY TEXT */
+
 body.dark-mode .tagline,
 body.dark-mode .member-tagline,
 body.dark-mode .member-details p,
@@ -426,7 +422,7 @@ body.dark-mode a:hover {
 }
 
 
-/* ===== 7. MOBILE & TABLET ===== */
+/* ===== MOBILE & TABLET ===== */
 @media(max-width:768px){
   .header-container{padding:1rem}
   .logo{width:60px;height:60px}
