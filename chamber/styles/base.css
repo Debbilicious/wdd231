@@ -1,4 +1,6 @@
-/* =====  VARIABLES & RESET ===== */
+
+
+/* ===== 1. VARIABLES & RESET ===== */
 :root{
   --color-primary-dark:#003366;
   --color-nav-hover:#004d99;
@@ -14,8 +16,6 @@
   --color-toggle-hover-light:#004d99;
   --color-label-text:#777777; 
   --color-label-text-dark:#B0B0B0;
-  --color-border-light:#E0E0E0;
-  --color-dark-secondary:#2C2C2C;
 }
 
 *{margin:0;padding:0;box-sizing:border-box}
@@ -32,19 +32,16 @@ body{
 }
 
 h1{font-family:'Poppins',sans-serif;font-weight:700;color:var(--color-dark-text)}
+/* General h2/h3 fix for light mode contrast */
 h2, h3{
-    font-family:'Poppins',sans-serif;
-    font-weight:700;
-    color:var(--color-dark-text);
-}
-h4{
     font-family:'Poppins',sans-serif;
     font-weight:700;
     color:var(--color-primary-dark);
 }
 main{flex:1}
-a:focus-visible,button:focus-visible{outline:3px solid var(--color-accent);outline-offset:2px}
+a:focus-visible,button:focus-visible{outline:3px solid #FFD700;outline-offset:2px}
 
+/* ===== 2. HEADER & NAV ===== */
 header{
   background-color:var(--color-light-gray);
   box-shadow:0 2px 8px rgba(0,0,0,.1);
@@ -96,7 +93,7 @@ header{
   font-family:'Inter',sans-serif;color:var(--color-dark-text);
   transition:background-color .2s;text-align:left
 }
-.theme-option:hover{background-color:var(--color-border-light)}
+.theme-option:hover{background-color:#E0E0E0}
 .theme-option.active{background-color:var(--color-accent);color:var(--color-light-text);font-weight:600}
 .theme-option .theme-icon{color:var(--color-primary-dark)}
 
@@ -129,6 +126,7 @@ nav a{
 }
 nav a:hover,nav a.active{background-color:var(--color-nav-hover);color:var(--color-light-text);font-weight:600}
 
+/* ===== 3. DIRECTORY PAGE STYLES ===== */
 .directory-container{max-width:1200px;margin:2rem auto;padding:0 2rem}
 .directory-header{
   display:flex;justify-content:space-between;align-items:center;
@@ -139,7 +137,7 @@ nav a:hover,nav a.active{background-color:var(--color-nav-hover);color:var(--col
 .view-controls{display:flex;gap:.5rem}
 .view-btn{
   padding:.75rem 1rem;background-color:var(--color-light-gray);
-  border:2px solid var(--color-border-light);border-radius:5px;cursor:pointer;
+  border:2px solid #E0E0E0;border-radius:5px;cursor:pointer;
   font-size:1.2rem;color:var(--color-dark-text);transition:all .3s
 }
 .view-btn:hover{border-color:var(--color-primary-dark);color:var(--color-primary-dark)}
@@ -158,7 +156,7 @@ nav a:hover,nav a.active{background-color:var(--color-nav-hover);color:var(--col
 }
 .member-card:hover, .info-card:hover, .spotlight-card:hover{transform:translateY(-5px);box-shadow:0 8px 20px rgba(0,0,0,.2)}
 
-.member-image{width:100%;height:200px;object-fit:cover;background-color:var(--color-border-light)}
+.member-image{width:100%;height:200px;object-fit:cover;background-color:#E0E0E0}
 .member-info{padding:1.5rem}
 .member-info h3{font-size:1.3rem;color:var(--color-primary-dark);margin-bottom:.5rem} 
 .member-tagline{color:var(--color-dark-gray);font-weight:600;font-size:.9rem;margin-bottom:1rem}
@@ -170,12 +168,12 @@ nav a:hover,nav a.active{background-color:var(--color-nav-hover);color:var(--col
   display:inline-flex;align-items:center;gap:.4rem;margin-top:1rem;
   padding:.5rem 1rem;border-radius:20px;font:700 .85rem/1 sans-serif;
   text-transform:uppercase;color:var(--color-dark-text);
-  border:2px solid var(--color-border-light);background-color:var(--color-light-gray)
+  border:2px solid #E0E0E0;background-color:var(--color-light-gray)
 }
-.badge-diamond{background:linear-gradient(135deg,#B9F2FF,#E0FFFF);border-color:var(--color-accent)}
-.badge-gold{background-color:var(--color-accent);border-color:var(--color-primary-dark)}
-.badge-silver{background-color:var(--color-dark-gray);border-color:var(--color-dark-text)}
-.badge-bronze{background-color:var(--color-nav-hover);border-color:var(--color-primary-dark)}
+.badge-diamond{background:linear-gradient(135deg,#B9F2FF,#E0FFFF);border-color:#A0D2E0}
+.badge-gold{background-color:#FFD700;border-color:#E0C000}
+.badge-silver{background-color:#A0A0A0;border-color:#808080}
+.badge-bronze{background-color:#F4D1A3;border-color:#D4B190}
 .badge-member{background-color:var(--color-accent);color:var(--color-light-text);border-color:var(--color-primary-dark)}
 
 .member-list{display:flex;flex-direction:column;gap:1rem}
@@ -183,7 +181,7 @@ nav a:hover,nav a.active{background-color:var(--color-nav-hover);color:var(--col
 .member-list .member-image{width:150px;height:150px;object-fit:cover;border-radius:10px}
 .member-list .member-info{padding:1.5rem; padding-right: 0;} 
 
-
+/* ===== 4. FOOTER ===== */
 footer{
   background-color:var(--color-primary-dark); 
   color:var(--color-light-gray);
@@ -210,15 +208,15 @@ footer{
 .social-icons a:hover{transform:scale(1.15);opacity:.9}
 .social-icons a img{width:32px;height:32px;filter:brightness(0) invert(1)}
 
-.social-icons a[aria-label="YouTube"]{background-color:var(--color-primary-dark)}
-.social-icons a[aria-label="LinkedIn"]{background-color:var(--color-primary-dark)}
-.social-icons a[aria-label="Facebook"]{background-color:var(--color-primary-dark)}
+.social-icons a[aria-label="YouTube"]{background-color:#FF0000}
+.social-icons a[aria-label="LinkedIn"]{background-color:#0077B5}
+.social-icons a[aria-label="Facebook"]{background-color:#1877F2}
 .social-icons a[aria-label="X (Twitter)"]{background-color:var(--color-primary-dark)}
-.social-icons a[aria-label="Instagram"]{background-color:var(--color-primary-dark)}
+.social-icons a[aria-label="Instagram"]{background:linear-gradient(45deg,#F58529,#DD2A7B,#8134AF,#515BD4)}
 
 .last-modified{font-size:.85rem;color:var(--color-light-gray);margin-top:1rem}
 
-
+/* ===== 5. HOME PAGE STYLES (CONTRAST & LAYOUT FIXES) ===== */
 
 .hero-section{position:relative;width:100%;height:400px;overflow:hidden}
 .hero-image{width:100%;height:100%;object-fit:cover;object-position:center}
@@ -250,12 +248,12 @@ footer{
 
 .home-container{max-width:1200px;margin:0 auto;padding:2rem 2rem 3rem}
 
-
+/* FINAL FIX: h2.page-title contrast issue - Set for Dark Blue text on Light background */
 .page-title{
     font-size:2rem;
     color:var(--color-primary-dark); 
     margin-bottom:2rem;
-    background-color: transparent;
+    background-color: transparent; 
 }
 
 .info-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:1.5rem;margin-bottom:3rem}
@@ -268,7 +266,7 @@ footer{
 }
 
 .events-list{display:flex;flex-direction:column;gap:1.5rem}
-.event-item h4{color:var(--color-primary-dark);font-size:1.1rem;margin-bottom:.5rem;font-weight:700}
+.event-item h4{color:var(--color-primary-dark);font-size:1.1rem;margin-bottom:.5rem}
 .event-date,.event-time,.event-location{font-size:.9rem;color:var(--color-dark-gray);margin-bottom:.3rem}
 .current-weather-content{display:flex;flex-direction:column;gap:1rem}
 .weather-main-display{display:flex;align-items:center;gap:1rem}
@@ -290,40 +288,40 @@ footer{
 
 .spotlights-grid{display: grid;grid-template-columns: repeat(3, 1fr);gap: 1.5rem}
 .spotlight-card{padding:1.5rem;display:flex;flex-direction:column;gap:1rem;}
-.spotlight-header{text-align:center;padding-bottom:1rem;border-bottom:2px solid var(--color-border-light)}
+.spotlight-header{text-align:center;padding-bottom:1rem;border-bottom:2px solid #E0E0E0}
 .spotlight-name{font-size:1.2rem;color:var(--color-primary-dark);font-weight:700;margin:0 0 .5rem 0}
 .spotlight-tagline{font-size:.9rem;color:var(--color-dark-text);font-weight:600;margin:0}
 
 .spotlight-content{display:grid;grid-template-columns:100px 1fr;gap:1rem;align-items:start}
 .spotlight-image-wrapper{
-  width:100px;height:100px;border:3px solid var(--color-border-light);
+  width:100px;height:100px;border:3px solid #E0E0E0;
   border-radius:5px;overflow:hidden;flex-shrink:0
 }
 .spotlight-image{width:100%;height:100%;object-fit:cover}
 
-
+/* FINAL FIX: Spotlight Wrapping - using comprehensive controls to fix link cut-off */
 .spotlight-info{
     flex:1;
     display:flex;
     flex-direction:column;
     gap:.5rem;
-    word-break: break-all; 
-    overflow-wrap: break-word; 
-    hyphens: auto; 
+    word-break: break-all; /* Aggressively break words/URLs */
+    overflow-wrap: break-word; /* Standard wrap policy */
+    hyphens: auto; /* Allow hyphenation */
 }
 .spotlight-contact{text-align:left}
 
 .spotlight-contact p{
     font:normal .85rem/1.4 sans-serif;
-    color:var(--color-dark-text); 
+    color:var(--color-label-text); 
     margin-bottom:.4rem;
     word-break: break-word; 
     overflow-wrap: break-word; 
 }
 .spotlight-contact strong{
-    color: var(--color-dark-text); 
+    color: var(--color-label-text); 
     font-size:.8rem;
-    font-weight: 600; 
+    font-weight: 400; 
 }
 .spotlight-contact a{
     color:var(--color-primary-dark); 
@@ -333,10 +331,11 @@ footer{
 .spotlight-badge{margin-top:auto}
 
 
-/* =====  DARK MODE ===== */
+/* ===== 6. DARK MODE ===== */
 body.dark-mode{
   background-color:var(--color-dark-bg);color:var(--color-light-text); 
 }
+/* CONSOLIDATED DARK MODE BACKGROUNDS & BORDERS */
 body.dark-mode header,
 body.dark-mode .info-card,
 body.dark-mode .member-card,
@@ -345,12 +344,12 @@ body.dark-mode .view-btn,
 body.dark-mode .forecast-item {
     background-color: var(--color-secondary-dark);
 }
-body.dark-mode .theme-dropdown{background-color:var(--color-dark-secondary);box-shadow:0 4px 12px rgba(0,0,0,.5)}
+body.dark-mode .theme-dropdown{background-color:#2C2C2C;box-shadow:0 4px 12px rgba(0,0,0,.5)}
 body.dark-mode .member-image, body.dark-mode .forecast-item:nth-child(even) { 
-    background-color: var(--color-dark-secondary);
+    background-color: #2C2C2C;
 }
 
-
+/* CONSOLIDATED DARK MODE PRIMARY ACCENTS & TEXT */
 body.dark-mode h1, 
 body.dark-mode .logo-text h1,
 body.dark-mode .theme-toggle,
@@ -367,23 +366,21 @@ body.dark-mode .spotlight-name {
     border-color: var(--color-dark-mode-primary);
 }
 
-
+/* Override default h2/h3 colors for dark mode */
 body.dark-mode h2, body.dark-mode h3{
     color: var(--color-dark-mode-primary);
 }
-
-body.dark-mode h4{
-    color: var(--color-dark-mode-primary);
-}
-
+/* Ensure page title gets light color in dark mode */
 body.dark-mode .page-title {
     color: var(--color-dark-mode-primary);
 }
 
+/* FIX: h4 contrast */
 body.dark-mode .events-list .event-item h4 {
     color: var(--color-dark-mode-primary); 
 }
 
+/* CONSOLIDATED DARK MODE SECONDARY TEXT */
 body.dark-mode .tagline,
 body.dark-mode .member-tagline,
 body.dark-mode .member-details p,
@@ -393,9 +390,10 @@ body.dark-mode .events-list .event-location,
 body.dark-mode .weather-info .weather-description-main,
 body.dark-mode .weather-details-list p,
 body.dark-mode .spotlight-tagline {
-    color: var(--color-border-light); 
+    color: #E0E0E0; 
 }
 
+/* Spotlight label/link colors in dark mode */
 body.dark-mode .spotlight-contact p, 
 body.dark-mode .spotlight-contact strong {
     color: var(--color-label-text-dark); 
@@ -409,7 +407,8 @@ body.dark-mode .spotlight-contact a:hover {
     text-decoration: underline; 
 }
 
-body.dark-mode .theme-toggle:hover{background-color:var(--color-primary-dark);border-color:var(--color-primary-dark);color:var(--color-light-text)}
+/* DARK MODE OVERRIDES & HOVERS */
+body.dark-mode .theme-toggle:hover{background-color:#003366;border-color:#003366;color:#FFFFFF}
 body.dark-mode nav a, body.dark-mode .view-btn {color:var(--color-light-text); background-color:var(--color-primary-dark);}
 body.dark-mode nav a:hover,body.dark-mode nav a.active{background-color:var(--color-nav-hover)}
 body.dark-mode .view-btn.active{background-color:var(--color-dark-mode-primary);color:var(--color-dark-text)}
@@ -417,8 +416,9 @@ body.dark-mode .member-details a:hover{color:var(--color-dark-mode-primary)}
 body.dark-mode .footer-section a{color:var(--color-light-text)}
 body.dark-mode .footer-section a:hover{color:var(--color-accent)}
 
+/* CONSOLIDATED DARK MODE LINKS */
 body.dark-mode a:not(.cta-button):not(nav a):not(.spotlight-contact a) {
-    color: var(--color-border-light); 
+    color: #E0E0E0; 
 }
 body.dark-mode a:hover {
     color: var(--color-dark-mode-primary); 
@@ -426,7 +426,7 @@ body.dark-mode a:hover {
 }
 
 
-/* ===== MOBILE & TABLET ===== */
+/* ===== 7. MOBILE & TABLET ===== */
 @media(max-width:768px){
   .header-container{padding:1rem}
   .logo{width:60px;height:60px}
@@ -464,33 +464,13 @@ body.dark-mode a:hover {
   .spotlights-grid{grid-template-columns:1fr;gap:1.5rem} 
   .spotlight-card{padding:1rem}
   .spotlight-content{grid-template-columns:80px 1fr;gap:.8rem}
-  .spotlight-image-wrapper{width:80px;height:80px;border:2px solid var(--color-border-light);border-radius:5px}
+  .spotlight-image-wrapper{width:80px;height:80px;border:2px solid #E0E0E0;border-radius:5px}
   .spotlight-name{font-size:1rem}
   .spotlight-tagline{font-size:.8rem}
   .spotlight-contact p{font-size:.75rem}
   .spotlight-contact strong{font-size:.7rem}
 }
-
 @media(min-width:769px) and (max-width:1024px){
   .info-grid{grid-template-columns:1fr;gap:1.5rem}
   .spotlights-grid{grid-template-columns:repeat(2,1fr)}
-}
-
-/* ==================================================
-   DARK MODE CONTRAST FIXES
-   --------------------------------------------------
-   1. Hero <h2> – stop the white-text override
-   2. Info-card – give it a dark background + proper heading colour
-   ================================================== */
-
-body.dark-mode .hero-content h2 {
-  color: #003366;
-}
-
-body.dark-mode .info-card {
-  background-color: var(--color-secondary-dark);
-}
-
-body.dark-mode .info-card h3 {
-  color: #cce5ff;
 }
