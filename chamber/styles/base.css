@@ -470,7 +470,27 @@ body.dark-mode a:hover {
   .spotlight-contact p{font-size:.75rem}
   .spotlight-contact strong{font-size:.7rem}
 }
+
 @media(min-width:769px) and (max-width:1024px){
   .info-grid{grid-template-columns:1fr;gap:1.5rem}
   .spotlights-grid{grid-template-columns:repeat(2,1fr)}
+}
+
+/* ==================================================
+   DARK MODE CONTRAST FIXES
+   --------------------------------------------------
+   1. Hero <h2> – stop the white-text override
+   2. Info-card – give it a dark background + proper heading colour
+   ================================================== */
+
+body.dark-mode .hero-content h2 {
+  color: #003366;
+}
+
+body.dark-mode .info-card {
+  background-color: var(--color-secondary-dark);
+}
+
+body.dark-mode .info-card h3 {
+  color: #cce5ff;
 }
