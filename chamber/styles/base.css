@@ -542,7 +542,7 @@ body.dark-mode a:hover {
 .section-heading {
     font-size: 1.3rem;
     font-weight: 700;
-    color: var(--color-dark-mode-primary);
+    color: var(--color-dark-text);
     background: linear-gradient(135deg, var(--color-accent), var(--color-primary-dark));
     padding: 0.8rem 1.5rem;
     border-radius: 8px;
