@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Join the Delta Shores Business Chamber. Application form and membership level details.">
+    <meta name="author" content="Okolocha Deborah">
+    
+    <meta property="og:title" content="Delta Shores Business Chamber - Join">
+    <meta property="og:description" content="Submit your application to join our thriving business community in Warri, Delta State.">
+    <meta property="og:image" content="images/join-hero.webp">
+    <meta property="og:url" content="https://debbilicious.github.io/wdd231/chamber/join.html">
+    <meta property="og:type" content="website">
+    
+    <title>Join - Delta Shores Business Chamber</title>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/base.css">
+    
+    <script src="scripts/main.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo-section">
+                <img src="images/dsbc-logo.png" alt="Delta Shores Business Chamber Logo" class="logo" loading="lazy"> 
+                <div class="logo-text">
+                    <h1>Delta Shores Business Chamber</h1>
+                    <p class="tagline">Connecting Commerce</p>
+                </div>
+            </div>
+            <div class="header-right">
+                <button class="theme-toggle" id="themeToggle" aria-label="Change theme">
+                    🌓
+                </button>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <nav id="mainNav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="discover.html">Discover</a></li>
+            <li><a href="directory.html">Directory</a></li>
+            <li><a href="join.html" class="active">Join</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="podcast.html">Podcast</a></li>
+            <li><a href="events.html">Events</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="join-hero-container">
+            <img src="images/join-hero.webp" alt="Business team collaborating on a clear board with sticky notes" class="join-hero-image" loading="lazy">
+            <div class="join-hero-overlay">
+                <div class="join-hero-content">
+                    <h2 class="page-title">MEMBERSHIP APPLICATION</h2>
+                    <p>Submit your application to join our thriving business community.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="home-container">
+            <div class="join-page-layout">
+                
+                <section class="join-form-section info-card">
+                    <form method="get" action="thankyou.html" class="membership-form">
+                        
+                        <fieldset class="form-section">
+                            <legend class="section-heading">Personal Information</legend>
+                            <div class="fieldset-grid">
+                                
+                                <label class="form-label" for="fname">
+                                    <span class="label-text">First Name*</span>
+                                    <input type="text" id="fname" name="fname" required title="Applicant's First Name" autocomplete="given-name">
+                                </label>
+
+                                <label class="form-label" for="lname">
+                                    <span class="label-text">Last Name*</span>
+                                    <input type="text" id="lname" name="lname" required title="Applicant's Last Name" autocomplete="family-name">
+                                </label>
+
+                                <label class="form-label" for="email">
+                                    <span class="label-text">Email Address*</span>
+                                    <input type="email" id="email" name="email" required title="Email Address" autocomplete="email" 
+                                        placeholder="name@example.com">
+                                </label>
+                                
+                                <label class="form-label" for="phone">
+                                    <span class="label-text">Mobile Phone Number*</span>
+                                    <input type="tel" id="phone" name="phone" required title="Mobile Phone Number" autocomplete="tel">
+                                </label>
+                                
+                                <label class="form-label full-width" for="orgtitle">
+                                    <span class="label-text">Organizational Title*</span>
+                                    <input type="text" id="orgtitle" name="orgtitle" title="Organizational Title (minimum 7 characters: letters, spaces, or hyphens only)" autocomplete="organization-title" required 
+                                        pattern="[a-zA-Z\s\-]{7,}" 
+                                        placeholder="e.g., Chief Executive Officer">
+                                    <small class="error-hint">Must be 7 or more letters, spaces, or hyphens.</small>
+                                </label>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="form-section">
+                            <legend class="section-heading">Business Information</legend>
+                            <div class="fieldset-grid">
+                                
+                                <label class="form-label" for="orgname">
+                                    <span class="label-text">Business Name*</span>
+                                    <input type="text" id="orgname" name="orgname" required title="Business/Organization Name" autocomplete="organization">
+                                </label>
+
+                                <label class="form-label" for="membership">
+                                    <span class="label-text">Select Membership Level*</span>
+                                    <select id="membership" name="membership" required title="Membership Level Selection">
+                                        <option value="" disabled selected>Choose a level...</option>
+                                        <option value="np">NP Membership (Non-Profit - No Fee)</option>
+                                        <option value="bronze">Bronze Membership</option>
+                                        <option value="silver">Silver Membership</option>
+                                        <option value="gold">Gold Membership</option>
+                                    </select>
+                                </label>
+                            </div>
+                            
+                            <label class="form-label full-width" for="description">
+                                <span class="label-text">Business Description</span>
+                                <textarea id="description" name="description" title="Business/Organization Description" rows="5" placeholder="Briefly describe your business."></textarea>
+                            </label>
+                        </fieldset>
+
+                        <input type="hidden" id="timestamp" name="timestamp">
+
+                        <div class="submit-button-container">
+                            <input type="submit" value="Complete Application" class="cta-button join-submit-btn">
+                        </div>
+                    </form>
+                </section>
+
+                <section class="membership-levels-section">
+                    <div class="membership-info-box info-card">
+                        <h3 class="section-heading-small">Membership Levels</h3>
+                        <p class="section-intro">Select the tier that best fits your business needs for maximum community impact and exposure.</p>
+
+                        <div class="card-grid">
+                            <div class="membership-card np-card" data-level="np">
+                                <h4>NP Membership (Free)</h4>
+                                <button type="button" class="modal-link" data-modal="np-modal">View Benefits</button>
+                            </div>
+                            <div class="membership-card bronze-card" data-level="bronze">
+                                <h4>Bronze (NGN 15,000)</h4>
+                                <button type="button" class="modal-link" data-modal="bronze-modal">View Benefits</button>
+                            </div>
+                            <div class="membership-card silver-card" data-level="silver">
+                                <h4>Silver (NGN 30,000)</h4>
+                                <button type="button" class="modal-link" data-modal="silver-modal">View Benefits</button>
+                            </div>
+                            <div class="membership-card gold-card" data-level="gold">
+                                <h4>Gold (NGN 50,000)</h4>
+                                <button type="button" class="modal-link" data-modal="gold-modal">View Benefits</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        
+        <!-- HTML5 Dialog Modals (W04 Requirement) -->
+        <dialog id="np-modal" class="membership-modal">
+            <button class="close-modal" aria-label="Close Modal">&times;</button>
+            <div class="modal-body">
+                <h3>NP Membership Benefits</h3>
+                <p>Designed for government and educational institutions and non-profit organizations.</p>
+                <ul>
+                    <li>Free listing in the online directory.</li>
+                    <li>Access to monthly newsletter.</li>
+                    <li>Discounted attendance to certain workshops.</li>
+                </ul>
+            </div>
+        </dialog>
+        
+        <dialog id="bronze-modal" class="membership-modal">
+            <button class="close-modal" aria-label="Close Modal">&times;</button>
+            <div class="modal-body">
+                <h3>Bronze Membership Benefits</h3>
+                <p>The entry-level tier for small and new businesses.</p>
+                <ul>
+                    <li>All NP benefits.</li>
+                    <li>5% discount on event tickets.</li>
+                    <li>Access to member-only business seminars.</li>
+                    <li>Basic social media shoutout once per quarter.</li>
+                </ul>
+            </div>
+        </dialog>
+        
+        <dialog id="silver-modal" class="membership-modal">
+            <button class="close-modal" aria-label="Close Modal">&times;</button>
+            <div class="modal-body">
+                <h3>Silver Membership Benefits</h3>
+                <p>A step up for businesses ready to increase visibility and network.</p>
+                <ul>
+                    <li>All Bronze benefits.</li>
+                    <li>10% discount on event tickets.</li>
+                    <li>Listing in 1 category in the print directory.</li>
+                    <li>Eligibility for member-exclusive training programs.</li>
+                </ul>
+            </div>
+        </dialog>
+        
+        <dialog id="gold-modal" class="membership-modal">
+            <button class="close-modal" aria-label="Close Modal">&times;</button>
+            <div class="modal-body">
+                <h3>Gold Membership Benefits</h3>
+                <p>The premium tier offering maximum resources and exposure opportunities.</p>
+                <ul>
+                    <li>All Silver benefits.</li>
+                    <li>20% discount on event tickets.</li>
+                    <li>Featured Gold Spotlight on the chamber homepage (random rotation).</li>
+                    <li>Quarterly feature article in the newsletter.</li>
+                    <li>Priority access to sponsorship opportunities.</li>
+                </ul>
+            </div>
+        </dialog>
+
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section contact-info">
+                <h3>Delta Shores Business Chamber</h3>
+                <p>📍 123 Effurun-Sapele Road, Warri, Delta State</p>
+                <p>📞 <a href="tel:+2348031234567">+234 803 123 4567</a></p>
+                <p>✉ <a href="mailto:info@deltashoresbc.org">info@deltashoresbc.org</a></p>
+            </div>
+
+            <div class="footer-section social-media">
+                <h3>Connect With Us</h3>
+                <div class="social-icons">
+                    <a href="https://www.youtube.com/@Deborahdebby5004" target="_blank" rel="noopener" aria-label="YouTube">
+                        <img src="images/youtube.svg" alt="Subscribe To Our YouTube Channel" width="32" height="32">
+                    </a>
+                    <a href="https://www.linkedin.com/in/OkolochaDeborah" target="_blank" rel="noopener" aria-label="LinkedIn">
+                        <img src="images/linkedin.svg" alt="This Is Our LinkedIn Page" width="32" height="32">
+                    </a>
+                    <a href="https://www.facebook.com/DebbyOkolocha" target="_blank" rel="noopener" aria-label="Facebook">
+                        <img src="images/facebook.svg" alt="Follow Us On Facebook" width="32" height="32">
+                    </a>
+                    <a href="https://x.com/debbilicious23" target="_blank" rel="noopener" aria-label="X (Twitter)">
+                        <img src="images/twitter-x.svg" alt="X (Twitter)" width="32" height="32">
+                    </a>
+                    <a href="https://www.instagram.com/debby_white9" target="_blank" rel="noopener" aria-label="Instagram">
+                        <img src="images/instagram.svg" alt="Follow Us On Instagram" width="32" height="32">
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-section project-info">
+                <p><strong>WDD 231 Class Project</strong></p>
+                <p>Okolocha Deborah</p>
+                <p>&copy; <span id="currentYear"></span> Delta Shores Business Chamber</p>
+                <p class="last-modified">Last Modified: <span id="lastModified"></span></p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

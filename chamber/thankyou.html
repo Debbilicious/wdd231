@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Thank you for joining the Delta Shores Business Chamber.">
+    <meta name="author" content="Okolocha Deborah">
+    
+    <meta property="og:title" content="Delta Shores Business Chamber - Thank You">
+    <meta property="og:description" content="Your application has been successfully submitted.">
+    <meta property="og:image" content="https://debbilicious.github.io/wdd231/chamber/images/business-hero.webp">
+    <meta property="og:url" content="https://debbilicious.github.io/wdd231/chamber/thankyou.html">
+    <meta property="og:type" content="website">
+    
+    <title>Thank You - Delta Shores Business Chamber</title>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/base.css">
+    
+    <script src="scripts/main.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo-section">
+                <img src="images/dsbc-logo.png" alt="Delta Shores Business Chamber Logo" class="logo" loading="lazy"> 
+                <div class="logo-text">
+                    <h1>Delta Shores Business Chamber</h1>
+                    <p class="tagline">Connecting Commerce</p>
+                </div>
+            </div>
+            <div class="header-right">
+                <button class="theme-toggle" id="themeToggle" aria-label="Change theme">
+                    🌓
+                </button>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <nav id="mainNav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="discover.html">Discover</a></li>
+            <li><a href="directory.html">Directory</a></li>
+            <li><a href="join.html">Join</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="podcast.html">Podcast</a></li>
+            <li><a href="events.html">Events</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="thankyou-container">
+            <h2 class="page-title">🎉 Application Submitted Successfully!</h2>
+            <p>Thank you for submitting your membership application to the Delta Shores Business Chamber. We are excited to review your information and welcome you to our community.</p>
+            <p>A chamber representative will contact you within <strong>3-5 business days</strong> to confirm your details and process the next steps for your selected membership level.</p>
+
+            <section class="submitted-data-card info-card">
+                <h3>Application Summary</h3>
+                <div id="form-data-display">
+                    <p>The information below was successfully received:</p>
+                </div>
+            </section>
+            
+            <a href="index.html" class="cta-button back-to-home-btn">Return to Home Page</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section contact-info">
+                <h3>Delta Shores Business Chamber</h3>
+                <p>📍 123 Effurun-Sapele Road, Warri, Delta State</p>
+                <p>📞 <a href="tel:+2348031234567">+234 803 123 4567</a></p>
+                <p>✉ <a href="mailto:info@deltashoresbc.org">info@deltashoresbc.org</a></p>
+            </div>
+
+            <div class="footer-section social-media">
+                <h3>Connect With Us</h3>
+                <div class="social-icons">
+                       <a href="https://www.youtube.com/@Deborahdebby5004" target="_blank" rel="noopener" aria-label="YouTube">
+                        <img src="images/youtube.svg" alt="Subscribe To Our YouTube Channel" width="32" height="32">
+                    </a>
+                    <a href="https://www.linkedin.com/in/OkolochaDeborah" target="_blank" rel="noopener" aria-label="LinkedIn">
+                        <img src="images/linkedin.svg" alt="This Is Our LinkedIn Page" width="32" height="32">
+                    </a>
+                    <a href="https://www.facebook.com/DebbyOkolocha" target="_blank" rel="noopener" aria-label="Facebook">
+                        <img src="images/facebook.svg" alt="Follow Us On Facebook" width="32" height="32">
+                    </a>
+                    <a href="https://x.com/debbilicious23" target="_blank" rel="noopener" aria-label="X (Twitter)">
+                        <img src="images/twitter-x.svg" alt="X (Twitter)" width="32" height="32">
+                    </a>
+                    <a href="https://www.instagram.com/debby_white9" target="_blank" rel="noopener" aria-label="Instagram">
+                        <img src="images/instagram.svg" alt="Follow Us On Instagram" width="32" height="32">
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-section project-info">
+                <p><strong>WDD 231 Class Project</strong></p>
+                <p>Okolocha Deborah</p>
+                <p>&copy; <span id="currentYear"></span> Delta Shores Business Chamber</p>
+                <p class="last-modified">Last Modified: <span id="lastModified"></span></p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

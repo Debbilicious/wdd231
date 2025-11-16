@@ -9,12 +9,15 @@ const API_KEY = '2a7c410ae5711bad39818da0723796d6';
 // THEME TOGGLE FUNCTIONALITY
 // ============================
 const themeToggle = document.getElementById('themeToggle');
-const themeDropdown = document.getElementById('themeDropdown');
 
 function createThemeDropdown() {
+    // Check if the dropdown already exists
+    let dropdown = document.getElementById('themeDropdown');
+    if (dropdown) return dropdown; 
+    
     if (!themeToggle) return;
     
-    const dropdown = document.createElement('div');
+    dropdown = document.createElement('div');
     dropdown.id = 'themeDropdown';
     dropdown.className = 'theme-dropdown';
     dropdown.innerHTML = `
@@ -58,9 +61,11 @@ function updateThemeIcon(icon) {
     }
 }
 
+// Initial theme application setup:
 const savedTheme = localStorage.getItem('theme') || 'auto';
 applyTheme(savedTheme);
 
+// Theme Toggle Event Listeners
 if (themeToggle) {
     const dropdown = createThemeDropdown();
     
@@ -78,15 +83,18 @@ if (themeToggle) {
         applyTheme(selectedTheme);
         dropdown.classList.remove('show');
         
+        // Update active class on dropdown options
         dropdown.querySelectorAll('.theme-option').forEach(opt => {
             opt.classList.remove('active');
         });
         button.classList.add('active');
     });
     
+    // Set initial active option
     const activeOption = dropdown.querySelector(`[data-theme="${savedTheme}"]`);
     if (activeOption) activeOption.classList.add('active');
     
+    // Close dropdown when clicking outside
     document.addEventListener('click', (e) => {
         if (!dropdown.contains(e.target) && e.target !== themeToggle) {
             dropdown.classList.remove('show');
@@ -94,6 +102,7 @@ if (themeToggle) {
     });
 }
 
+// Auto-theme listener for system preference change
 if (window.matchMedia) {
     const darkModeQuery = window.matchMedia('(prefers-color-scheme: dark)');
     darkModeQuery.addEventListener('change', (e) => {
@@ -286,7 +295,7 @@ function displayWeatherForecast(data) {
         const dateString = date.toLocaleDateString();
         const hour = date.getHours();
 
-        // Get one forecast per day around midday (12pm)
+        // Get one forecast per day around midday (11am-1pm)
         if (hour >= 11 && hour <= 13 && !processedDates.has(dateString) && dailyForecasts.length < 3) {
             dailyForecasts.push({
                 day: date.toLocaleDateString('en-US', { weekday: 'long' }),
@@ -346,8 +355,10 @@ function displaySpotlights(members, container) {
                     <p class="spotlight-tagline">${escapeHtml(member.tagline || '')}</p>
                 </div>
                 <div class="spotlight-content">
-                    <img src="${member.image}" alt="${escapeHtml(member.name)}" class="spotlight-image" loading="lazy">
-                    <div class="spotlight-details">
+                    <div class="spotlight-image-wrapper">
+                        <img src="${member.image}" alt="${escapeHtml(member.name)}" class="spotlight-image" loading="lazy">
+                    </div>
+                    <div class="spotlight-contact">
                         ${member.email ? `<p>EMAIL: <a href="mailto:${member.email}">${escapeHtml(member.email)}</a></p>` : ''}
                         ${member.phone ? `<p>PHONE: <a href="tel:${member.phone}">${escapeHtml(member.phone)}</a></p>` : ''}
                         ${member.website ? `<p>URL: <a href="${member.website}" target="_blank" rel="noopener">${escapeHtml(member.website)}</a></p>` : ''}
@@ -363,6 +374,112 @@ function getRandomMembers(array, count) {
     const shuffled = [...array].sort(() => 0.5 - Math.random());
     return shuffled.slice(0, Math.min(count, shuffled.length));
 }
+
+// ===================================
+// W04 JOIN PAGE FUNCTIONALITY (NEW)
+// ===================================
+
+/**
+ * Sets the current date and time in the hidden timestamp field on join.html.
+ */
+function setFormTimestamp() {
+    // Only run if the timestamp field element exists
+    const timestampField = document.getElementById('timestamp');
+    if (timestampField) {
+        const now = new Date();
+        // Use ISO String for precise, standardized date/time submission
+        timestampField.value = now.toISOString(); 
+    }
+}
+
+/**
+ * Displays submitted form data on the thankyou.html page.
+ */
+function displayThankYouData() {
+    const displaySection = document.getElementById('form-data-display');
+    
+    // Only run if we are on the thankyou page
+    if (!displaySection) return; 
+
+    const params = new URLSearchParams(window.location.search);
+
+    // Define the required fields to display (must match 'name' attributes in join.html form)
+    const fieldsToDisplay = {
+        'fname': "First Name",
+        'lname': "Last Name",
+        'email': "Email Address",
+        'phone': "Mobile Number",
+        'orgname': "Business Name",
+        'timestamp': "Application Time"
+    };
+
+    let htmlContent = '<ul>';
+
+    for (const [paramName, friendlyName] of Object.entries(fieldsToDisplay)) {
+        const value = params.get(paramName);
+        if (value) {
+            let displayValue = value;
+            
+            // Format the timestamp for better readability
+            if (paramName === 'timestamp') {
+                try {
+                    const date = new Date(value);
+                    displayValue = date.toLocaleDateString('en-US') + ' at ' + date.toLocaleTimeString('en-US');
+                } catch (e) {
+                    // Fallback to raw value
+                }
+            }
+            
+            htmlContent += `<li><strong>${friendlyName}:</strong> ${displayValue}</li>`;
+        }
+    }
+
+    htmlContent += '</ul>';
+    
+    // Append content, preserving any initial message in the div
+    displaySection.innerHTML += htmlContent;
+}
+
+/**
+ * Setup modal dialogs (W04 Requirement: Use HTML5 dialog element)
+ */
+function setupModals() {
+    // Get all modal trigger buttons
+    const modalButtons = document.querySelectorAll('.modal-link[data-modal]');
+    
+    modalButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const modalId = button.getAttribute('data-modal');
+            const modal = document.getElementById(modalId);
+            
+            if (modal) {
+                modal.showModal();
+                
+                // Close button inside modal
+                const closeButton = modal.querySelector('.close-modal');
+                if (closeButton) {
+                    closeButton.addEventListener('click', () => {
+                        modal.close();
+                    });
+                }
+                
+                // Close when clicking outside the modal (W04 Requirement)
+                modal.addEventListener('click', (e) => {
+                    const dialogDimensions = modal.getBoundingClientRect();
+                    if (
+                        e.clientX < dialogDimensions.left ||
+                        e.clientX > dialogDimensions.right ||
+                        e.clientY < dialogDimensions.top ||
+                        e.clientY > dialogDimensions.bottom
+                    ) {
+                        modal.close();
+                    }
+                });
+            }
+        });
+    });
+}
+
 
 // ============================
 // UTILITY FUNCTIONS
@@ -402,6 +519,11 @@ function updateFooter() {
 document.addEventListener('DOMContentLoaded', () => {
     // Update footer on all pages
     updateFooter();
+
+    // W04 Assignment Initialization (Runs on all pages, only executes on relevant one)
+    setFormTimestamp();     
+    displayThankYouData();  
+    setupModals();          
 
     // Load directory members if on directory page
     if (memberDirectory) {
