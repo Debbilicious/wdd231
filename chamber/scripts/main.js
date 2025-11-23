@@ -69,37 +69,39 @@ applyTheme(savedTheme);
 if (themeToggle) {
     const dropdown = createThemeDropdown();
     
-    themeToggle.addEventListener('click', (e) => {
-        e.stopPropagation();
-        dropdown.classList.toggle('show');
-    });
-    
-    dropdown.addEventListener('click', (e) => {
-        const button = e.target.closest('.theme-option');
-        if (!button) return;
-        
-        const selectedTheme = button.dataset.theme;
-        localStorage.setItem('theme', selectedTheme);
-        applyTheme(selectedTheme);
-        dropdown.classList.remove('show');
-        
-        // Update active class on dropdown options
-        dropdown.querySelectorAll('.theme-option').forEach(opt => {
-            opt.classList.remove('active');
+    if (dropdown) {
+        themeToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            dropdown.classList.toggle('show');
         });
-        button.classList.add('active');
-    });
-    
-    // Set initial active option
-    const activeOption = dropdown.querySelector(`[data-theme="${savedTheme}"]`);
-    if (activeOption) activeOption.classList.add('active');
-    
-    // Close dropdown when clicking outside
-    document.addEventListener('click', (e) => {
-        if (!dropdown.contains(e.target) && e.target !== themeToggle) {
+        
+        dropdown.addEventListener('click', (e) => {
+            const button = e.target.closest('.theme-option');
+            if (!button) return;
+            
+            const selectedTheme = button.dataset.theme;
+            localStorage.setItem('theme', selectedTheme);
+            applyTheme(selectedTheme);
             dropdown.classList.remove('show');
-        }
-    });
+            
+            // Update active class on dropdown options
+            dropdown.querySelectorAll('.theme-option').forEach(opt => {
+                opt.classList.remove('active');
+            });
+            button.classList.add('active');
+        });
+        
+        // Set initial active option
+        const activeOption = dropdown.querySelector(`[data-theme="${savedTheme}"]`);
+        if (activeOption) activeOption.classList.add('active');
+        
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!dropdown.contains(e.target) && e.target !== themeToggle) {
+                dropdown.classList.remove('show');
+            }
+        });
+    }
 }
 
 // Auto-theme listener for system preference change
@@ -123,6 +125,24 @@ if (mobileMenuToggle && mainNav) {
     mobileMenuToggle.addEventListener('click', () => {
         mainNav.classList.toggle('active');
         mobileMenuToggle.classList.toggle('active');
+    });
+}
+
+// ============================
+// ACTIVE PAGE NAVIGATION (FIX FOR NAVIGATION & WAYFINDING)
+// ============================
+function setActivePage() {
+    const navLinks = document.querySelectorAll('nav a');
+    const currentURL = window.location.href;
+
+    navLinks.forEach((link) => {
+        // Remove active class from all links first
+        link.classList.remove('active');
+        
+        // Add active class to the current page link
+        if (currentURL === link.href || currentURL.includes(link.getAttribute('href'))) {
+            link.classList.add('active');
+        }
     });
 }
 
@@ -376,7 +396,7 @@ function getRandomMembers(array, count) {
 }
 
 // ===================================
-// W04 JOIN PAGE FUNCTIONALITY (NEW)
+// W04 JOIN PAGE FUNCTIONALITY
 // ===================================
 
 /**
@@ -480,6 +500,98 @@ function setupModals() {
     });
 }
 
+// ===================================
+// W05 DISCOVER PAGE FUNCTIONALITY
+// ===================================
+
+/**
+ * Load and display attractions on discover page
+ */
+async function loadAttractions() {
+    const attractionsGrid = document.getElementById('attractionsGrid');
+    if (!attractionsGrid) return; // Only run if on discover page
+
+    try {
+        // Fetch attractions data
+        const response = await fetch('data/attractions.json');
+        if (!response.ok) throw new Error('Network response was not ok');
+        
+        const attractions = await response.json();
+        displayAttractions(attractions, attractionsGrid);
+    } catch (error) {
+        console.error('Error loading attractions:', error);
+        attractionsGrid.innerHTML = '<p>Error loading attractions. Please try again later.</p>';
+    }
+}
+
+/**
+ * Display attractions in grid
+ */
+function displayAttractions(attractions, container) {
+    container.innerHTML = '';
+
+    attractions.forEach(attraction => {
+        const card = document.createElement('div');
+        card.className = 'attraction-card';
+
+        card.innerHTML = `
+            <h2>${escapeHtml(attraction.name)}</h2>
+            <figure>
+                <img src="${attraction.image}" 
+                     alt="${escapeHtml(attraction.name)}" 
+                     loading="lazy"
+                     width="300" 
+                     height="200">
+            </figure>
+            <address>${escapeHtml(attraction.address)}</address>
+            <p>${escapeHtml(attraction.description)}</p>
+            <button type="button" onclick="window.open('https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(attraction.address)}', '_blank')">
+                Learn More
+            </button>
+        `;
+
+        container.appendChild(card);
+    });
+}
+
+/**
+ * Display visit message using localStorage
+ */
+function displayVisitMessage() {
+    const visitMessageContainer = document.getElementById('visitMessage');
+    if (!visitMessageContainer) return; // Only run if on discover page
+
+    const now = Date.now();
+    const lastVisit = localStorage.getItem('lastVisitDiscover');
+
+    let message = '';
+
+    if (!lastVisit) {
+        // First visit
+        message = '🎉 Welcome! Let us know if you have any questions.';
+    } else {
+        const lastVisitTime = parseInt(lastVisit);
+        const timeDiff = now - lastVisitTime;
+        const daysDiff = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+
+        if (daysDiff < 1) {
+            // Less than a day
+            message = '👋 Back so soon! Awesome!';
+        } else if (daysDiff === 1) {
+            // Exactly 1 day
+            message = `📅 You last visited 1 day ago.`;
+        } else {
+            // More than 1 day
+            message = `📅 You last visited ${daysDiff} days ago.`;
+        }
+    }
+
+    // Store current visit
+    localStorage.setItem('lastVisitDiscover', now.toString());
+
+    // Display message
+    visitMessageContainer.textContent = message;
+}
 
 // ============================
 // UTILITY FUNCTIONS
@@ -520,6 +632,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Update footer on all pages
     updateFooter();
 
+    // Set active page navigation - THIS FIXES NAVIGATION & WAYFINDING!
+    setActivePage();
+
     // W04 Assignment Initialization (Runs on all pages, only executes on relevant one)
     setFormTimestamp();     
     displayThankYouData();  
@@ -535,6 +650,12 @@ document.addEventListener('DOMContentLoaded', () => {
         fetchCurrentWeather();
         fetchWeatherForecast();
         loadSpotlights();
+    }
+
+    // W05: Load discover page content if on discover page
+    if (document.getElementById('attractionsGrid')) {
+        displayVisitMessage();
+        loadAttractions();
     }
 
     // Lazy loading images

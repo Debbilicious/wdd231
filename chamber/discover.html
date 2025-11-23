@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Delta Shores Business Chamber - Connecting Commerce in Warri, Delta State. Discover local businesses, networking opportunities, and economic growth resources.">
+    <meta name="description" content="Discover Warri, Delta State - Explore local attractions, culture, dining, and entertainment in Nigeria's vibrant oil city.">
     <meta name="author" content="Okolocha Deborah">
     
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Delta Shores Business Chamber Business Directory - Connecting Commerce in Warri, Delta State">
-    <meta property="og:description" content="Explore member businesses of Delta Shores Business Chamber in Warri, Delta State. From agriculture to luxury hospitality, discover thriving local enterprises.">
-    <meta property="og:image" content="https://debbilicious.github.io/wdd231/chamber/images/dsbc-logo.png">
-    <meta property="og:url" content="https://debbilicious.github.io/wdd231/chamber/directory.html">
+    <meta property="og:title" content="Discover Warri - Delta Shores Business Chamber">
+    <meta property="og:description" content="Explore the best attractions, cultural sites, dining, and entertainment in Warri, Delta State, Nigeria.">
+    <meta property="og:image" content="https://debbilicious.github.io/wdd231/chamber/images/warri-hero.webp">
+    <meta property="og:url" content="https://debbilicious.github.io/wdd231/chamber/discover.html">
     <meta property="og:type" content="website">
     
-    <title>Business Directory - Delta Shores Business Chamber</title>
+    <title>Discover Warri - Delta Shores Business Chamber</title>
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,7 +23,10 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/base.css">
+    
+    <!-- JavaScript with module type -->
     <script src="scripts/main.js" defer></script>
+    
 </head>
 <body>
     <!-- Header -->
@@ -37,11 +40,9 @@
                 </div>
             </div>
             <div class="header-right">
-                <!-- Theme Toggle Button for JS -->
                 <button class="theme-toggle" id="themeToggle" aria-label="Change theme">
                     🌓
                 </button>
-            </div>
                 <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu">
                     <span></span>
                     <span></span>
@@ -66,21 +67,29 @@
 
     <!-- Main Content -->
     <main>
-        <div class="directory-container">
-            <div class="directory-header">
-                <h2>Member Directory</h2>
-                <div class="view-controls">
-                    <button id="gridBtn" class="view-btn active" aria-label="Grid view">
-                        ⊞
-                    </button>
-                    <button id="listBtn" class="view-btn" aria-label="List view">
-                        ☰
-                    </button>
+        <!-- Hero Banner Section -->
+        <section class="discover-hero">
+            <img src="images/warri-hero.webp" alt="Warri city at sunset with river and skyline" class="discover-hero-image" loading="eager">
+            <div class="discover-hero-overlay">
+                <div class="discover-hero-content">
+                    <h2>Discover Warri</h2>
+                    <p>Explore the vibrant culture, rich heritage, and thriving business landscape of Delta State's oil city.</p>
                 </div>
             </div>
+        </section>
 
-            <div id="memberDirectory" class="member-grid">
-                <!-- Members will be populated by JavaScript -->
+        <div class="home-container">
+            <!-- Visit Message Section -->
+            <div id="visitMessage" class="visit-message-container">
+                <!-- Message will be populated by JavaScript -->
+            </div>
+
+            <!-- Page Title -->
+            <h2 class="page-title">Attractions & Points of Interest</h2>
+
+            <!-- Attractions Grid -->
+            <div id="attractionsGrid" class="attractions-grid">
+                <!-- Cards will be populated by JavaScript from attractions.mjs -->
             </div>
         </div>
     </main>

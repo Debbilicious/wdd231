@@ -1,0 +1,58 @@
+[
+    {
+        "id": 1,
+        "name": "Warri Cultural Heritage Center",
+        "address": "45 Cultural Road, Warri, Delta State",
+        "description": "Experience the rich traditions of the Itsekiri, Urhobo, and Ijaw peoples through vibrant cultural performances, traditional art exhibits, and historical artifacts. This center celebrates the diverse heritage of the Niger Delta region.",
+        "image": "images/attraction-1.webp"
+    },
+    {
+        "id": 2,
+        "name": "Warri River Waterfront",
+        "address": "Riverside Drive, Warri, Delta State",
+        "description": "A scenic waterfront destination offering breathtaking views of the Warri River. Perfect for evening strolls, boat rides, and experiencing the serene beauty of Delta State's natural waterways and riverside communities.",
+        "image": "images/attraction-2.webp"
+    },
+    {
+        "id": 3,
+        "name": "Effurun Shopping Plaza",
+        "address": "12 Effurun-Sapele Road, Warri, Delta State",
+        "description": "The premier shopping destination in Warri featuring modern retail stores, local markets, restaurants, and entertainment facilities. A bustling hub where traditional markets meet contemporary commerce.",
+        "image": "images/attraction-3.webp"
+    },
+    {
+        "id": 4,
+        "name": "Igbudu Market",
+        "address": "Igbudu, Warri, Delta State",
+        "description": "A vibrant covered marketplace offering fresh produce, colorful textiles, traditional fabrics, and local crafts. Experience authentic Warri commerce in this bustling hub where locals shop for everything from vegetables to beautiful African prints.",
+        "image": "images/attraction-4.webp"
+    },
+    {
+        "id": 5,
+        "name": "Delta Business District",
+        "address": "Central Business District, Warri, Delta State",
+        "description": "The economic powerhouse of Warri showcasing modern office complexes, financial institutions, and corporate headquarters. A testament to the city's growing role as a major commercial center in Nigeria.",
+        "image": "images/attraction-5.webp"
+    },
+    {
+        "id": 6,
+        "name": "The River Restaurant & Lounge",
+        "address": "78 Airport Road, Warri, Delta State",
+        "description": "Fine dining experience featuring contemporary Nigerian cuisine with international influences. Elegant ambiance with traditional African decor, exceptional service, and a menu that celebrates local flavors with a modern twist.",
+        "image": "images/attraction-6.webp"
+    },
+    {
+        "id": 7,
+        "name": "Golden Gate Hotel & Suites",
+        "address": "101 Deco Road, Warri, Delta State",
+        "description": "Luxury accommodation offering world-class hospitality in the heart of Warri. Features modern amenities, conference facilities, fine dining, and exceptional service for business and leisure travelers.",
+        "image": "images/attraction-7.webp"
+    },
+    {
+        "id": 8,
+        "name": "Warri City Park",
+        "address": "Park Avenue, GRA, Warri, Delta State",
+        "description": "A peaceful urban oasis providing green spaces for recreation, exercise, and relaxation. Popular with families, joggers, and anyone seeking a tranquil escape within the city with walking paths and beautiful landscaping.",
+        "image": "images/attraction-8.webp"
+    }
+]
