@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Site plan for Debby's Fashion Collection (DFC) - A premium online fashion gallery.">
+    <meta name="author" content="Okolocha Deborah">
+    
+    <meta property="og:title" content="DFC Fashion - Site Plan">
+    <meta property="og:description" content="Planning document for Debby's Fashion Collection website project.">
+    <meta property="og:type" content="website">
+    
+    <title>DFC Fashion - Site Plan</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles/siteplan.css">
+</head>
+<body>
+    <header>
+        <img src="images/dfc-logo.webp" alt="DFC Fashion Logo" class="site-logo">
+        <div>
+            <h1>DFC Fashion</h1>
+            <p>Debby's Fashion Collection - Site Plan</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="section">
+            <h2>1. Site Name</h2>
+            <p><strong>Debby's Fashion Collection (DFC)</strong></p>
+            <p>The name "Debby's Fashion Collection" represents my personal fashion boutique offering premium fashion items. The acronym "DFC" creates a memorable brand identity that's modern and sophisticated. It reflects exclusivity and quality, appealing to fashion-conscious customers seeking stylish pieces.</p>
+            <p><strong>Optional domain:</strong> dfc-fashion.com or debbyfashion.com</p>
+            
+            <h3>Why I Chose This Subject</h3>
+            <p>I chose a fashion-themed website because I have personal experience running a fashion boutique. I used to sell clothing, shoes, accessories, and jewelry, managing the business operations and customer relationships. Creating this site allows me to combine my real-world fashion business experience with web development, while demonstrating all the required JavaScript and technical skills for the project.</p>
+        </section>
+
+        <section class="section">
+            <h2>2. Site Purpose</h2>
+            <p>DFC Fashion is a premium fashion catalog website showcasing my curated selection of 20+ clothing, shoes, accessories, and jewelry items. The site provides:</p>
+            <ul>
+                <li><strong>Home Page (index.html):</strong> Introduction to the collection with hero section and 6-8 featured trending items</li>
+                <li><strong>Gallery/Collection Page (gallery.html):</strong> Displays all 20+ fashion items dynamically loaded from a JSON data source with category filtering and search functionality</li>
+                <li><strong>About Us Page (about.html):</strong> My personal story in the fashion business, brand mission, and passion for curating quality fashion pieces</li>
+                <li><strong>Contact Page (contact.html):</strong> Contact form for customer inquiries and business information</li>
+                <li><strong>Thank You Page (thankyou.html):</strong> Form submission confirmation page (does not count toward 3-page requirement)</li>
+            </ul>
+            
+            <h3>Dynamic Features</h3>
+            <p>The site demonstrates JavaScript proficiency through:</p>
+            <ul>
+                <li>Data fetching from JSON file using Fetch API with try/catch error handling</li>
+                <li>Dynamic content generation displaying 20+ items with 4+ properties each (image, name, price, category, description)</li>
+                <li>Local storage for wishlist/favorites functionality</li>
+                <li>Modal dialogs for detailed product information</li>
+                <li>DOM manipulation and event handling (clicks, filters, sorting)</li>
+                <li>Array methods (filter, map, forEach) for data processing</li>
+                <li>Template literals for dynamic HTML generation</li>
+                <li>ES Modules for code organization</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>3. Target Audience Scenarios</h2>
+            
+            <div class="scenario">
+                <strong>Scenario 1:</strong>
+                <p>"I want to see the latest fashion items with their prices before making a purchase decision."</p>
+                <p><em>Answer:</em> Browse our complete collection on the Gallery page where all 20+ items are displayed with high-quality images, detailed descriptions, pricing, and category information. Use filters to narrow by category (clothing, shoes, accessories, jewelry).</p>
+            </div>
+
+            <div class="scenario">
+                <strong>Scenario 2:</strong>
+                <p>"I want to save my favorite items so I can review them later during my shopping session."</p>
+                <p><em>Answer:</em> Click the heart icon on any product to add it to your wishlist. Your selections are saved using local storage and remain available throughout your browsing session.</p>
+            </div>
+
+            <div class="scenario">
+                <strong>Scenario 3:</strong>
+                <p>"I want to learn about the boutique owner and contact them with questions about specific items."</p>
+                <p><em>Answer:</em> Visit the About Us page to learn about my fashion business journey and experience. Then use the contact form on the Contact page to submit inquiries, or find direct contact information including email and phone number.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>4. Color Schema</h2>
+            <p>The color palette features sophisticated, earthy tones that convey elegance and luxury while ensuring excellent readability and accessibility.</p>
+            
+            <div class="colors">
+                <div class="color-box">
+                    <div class="color-swatch color-burgundy"></div>
+                    <p class="color-name"><strong>Burgundy</strong></p>
+                    <p>#641739</p>
+                    <p>Headings, navigation, accents</p>
+                </div>
+                
+                <div class="color-box">
+                    <div class="color-swatch color-tan"></div>
+                    <p class="color-name"><strong>Tan/Camel</strong></p>
+                    <p>#B2846E</p>
+                    <p>Prices, buttons, highlights</p>
+                </div>
+                
+                <div class="color-box">
+                    <div class="color-swatch color-teal"></div>
+                    <p class="color-name"><strong>Dark Teal</strong></p>
+                    <p>#475451</p>
+                    <p>Body text, footer background</p>
+                </div>
+                
+                <div class="color-box">
+                    <div class="color-swatch color-cream"></div>
+                    <p class="color-name"><strong>Cream</strong></p>
+                    <p>#E8E0DA</p>
+                    <p>Page background</p>
+                </div>
+                
+                <div class="color-box">
+                    <div class="color-swatch color-mauve"></div>
+                    <p class="color-name"><strong>Mauve</strong></p>
+                    <p>#BBA3AE</p>
+                    <p>Borders, dividers</p>
+                </div>
+                
+                <div class="color-box">
+                    <div class="color-swatch color-white"></div>
+                    <p class="color-name"><strong>White</strong></p>
+                    <p>#FFFFFF</p>
+                    <p>Card backgrounds</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>5. Typography</h2>
+            <p>The typography selections balance elegance with readability, using Google Fonts for consistent rendering across all devices.</p>
+            
+            <div class="font-example">
+                <p class="font-heading">Playfair Display</p>
+                <p class="font-body"><strong>Font Family:</strong> 'Playfair Display', serif</p>
+                <p class="font-body"><strong>Weights:</strong> 400, 600, 700</p>
+                <p class="font-body"><strong>Use:</strong> All headings (H1, H2, H3), logo text, product titles</p>
+            </div>
+
+            <div class="font-example">
+                <p class="font-body" style="font-size: 1.3rem; font-weight: 600;">Montserrat</p>
+                <p class="font-body"><strong>Font Family:</strong> 'Montserrat', sans-serif</p>
+                <p class="font-body"><strong>Weights:</strong> 400, 500, 600</p>
+                <p class="font-body"><strong>Use:</strong> Body text, navigation links, product descriptions, buttons</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>6. Wireframes</h2>
+            <p>The wireframes demonstrate the layout structure for the home page on both mobile and desktop viewports.</p>
+            
+            <div class="wireframe-section">
+                <div class="wireframe-box">
+                    <h3>Mobile View (320px - 767px)</h3>
+                    <img src="images/mobile-wireframe.webp" alt="Mobile wireframe" class="wireframe-image">
+                    <p class="wireframe-caption">Hamburger nav, hero section, stacked products, footer</p>
+                </div>
+
+                <div class="wireframe-box">
+                    <h3>Desktop View (768px+)</h3>
+                    <img src="images/desktop-wireframe.webp" alt="Desktop wireframe" class="wireframe-image">
+                    <p class="wireframe-caption">Horizontal nav, hero banner, 4-column grid, footer</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Debby's Fashion Collection (DFC). All rights reserved.</p>
+        <p>Contact: info@dfcfashion.com | +234 XXX XXX XXXX</p>
+    </footer>
+</body>
+</html>
