@@ -1,0 +1,204 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Floral Embroidered Smocked Dress",
+      "category": "Clothing",
+      "price": 89000,
+      "description": "Beautiful blue and white smocked bodice dress with colorful floral embroidery on the tiered skirt. Perfect for summer occasions.",
+      "image": "images/item-1.webp",
+      "inStock": true,
+      "rating": 4.8
+    },
+    {
+      "id": 2,
+      "name": "Scattered Floral Embroidered Shirt",
+      "category": "Clothing",
+      "price": 65000,
+      "description": "White linen shirt with scattered colorful floral embroidery. Features a classic collar and button-down front.",
+      "image": "images/item-2.webp",
+      "inStock": true,
+      "rating": 4.5
+    },
+    {
+      "id": 3,
+      "name": "Strappy Sandals Collection",
+      "category": "Shoes",
+      "price": 49000,
+      "description": "Elegant strappy sandals available in green flat style and blue wedge espadrille. Perfect for summer outings.",
+      "image": "images/item-3.webp",
+      "inStock": true,
+      "rating": 4.6
+    },
+    {
+      "id": 4,
+      "name": "Embroidered A-Line Skirt",
+      "category": "Clothing",
+      "price": 75000,
+      "description": "Raspberry pink midi skirt with intricate embroidered hem detail and bow tie waist. Feminine and elegant.",
+      "image": "images/item-4.webp",
+      "inStock": true,
+      "rating": 4.7
+    },
+    {
+      "id": 5,
+      "name": "Fringe Detail Wide Leg Jeans",
+      "category": "Clothing",
+      "price": 95000,
+      "description": "Light wash denim jeans with unique fringe detailing along the outer seams. Modern and trendy style.",
+      "image": "images/item-5.webp",
+      "inStock": false,
+      "rating": 4.4
+    },
+    {
+      "id": 6,
+      "name": "Geometric Print Camp Collar Shirt",
+      "category": "Clothing",
+      "price": 58000,
+      "description": "Blue geometric patchwork print shirt with camp collar. Relaxed fit perfect for casual wear.",
+      "image": "images/item-6.webp",
+      "inStock": true,
+      "rating": 4.3
+    },
+    {
+      "id": 7,
+      "name": "Floral Print Maxi Dress Set",
+      "category": "Clothing",
+      "price": 125000,
+      "description": "Two-piece light blue floral print set with long-sleeve shirt dress and palazzo pants. Elegant modest fashion.",
+      "image": "images/item-7.webp",
+      "inStock": true,
+      "rating": 4.9
+    },
+    {
+      "id": 8,
+      "name": "Streetwear Outfit Set",
+      "category": "Clothing",
+      "price": 145000,
+      "description": "Complete outfit with white lace crop top, pink striped cargo pants, accessories, and chunky sneakers.",
+      "image": "images/item-8.webp",
+      "inStock": true,
+      "rating": 4.5
+    },
+    {
+      "id": 9,
+      "name": "Ornate Silk Scarf",
+      "category": "Accessories",
+      "price": 45000,
+      "description": "Luxurious silk scarf with vibrant blue, pink, green and yellow ornate pattern. Versatile styling piece.",
+      "image": "images/item-9.webp",
+      "inStock": true,
+      "rating": 4.8
+    },
+    {
+      "id": 10,
+      "name": "Statement Jewelry Collection",
+      "category": "Jewelry",
+      "price": 85000,
+      "description": "Colorful jewelry set including bracelets, rings, cuff, and earrings with turquoise, coral, and gemstone accents.",
+      "image": "images/item-10.webp",
+      "inStock": true,
+      "rating": 4.6
+    },
+    {
+      "id": 11,
+      "name": "Designer Watch Collection",
+      "category": "Accessories",
+      "price": 199000,
+      "description": "Elegant watch collection featuring chronograph, floral face, smartwatch, and mesh band styles.",
+      "image": "images/item-11.webp",
+      "inStock": true,
+      "rating": 4.7
+    },
+    {
+      "id": 12,
+      "name": "Embroidered Denim Jacket Set",
+      "category": "Clothing",
+      "price": 135000,
+      "description": "Classic denim jackets - women's with floral embroidery and men's clean style. Perfect layering pieces.",
+      "image": "images/item-12.webp",
+      "inStock": true,
+      "rating": 4.8
+    },
+    {
+      "id": 13,
+      "name": "Professional Leather Handbag Set",
+      "category": "Accessories",
+      "price": 165000,
+      "description": "Black leather bag collection with structured tote and crossbody messenger. Gold hardware accents.",
+      "image": "images/item-13.webp",
+      "inStock": true,
+      "rating": 4.9
+    },
+    {
+      "id": 14,
+      "name": "Leather Lace-Up Boots",
+      "category": "Shoes",
+      "price": 189000,
+      "description": "Premium leather ankle boots in dark brown and tan. Classic cap-toe design with lace-up closure.",
+      "image": "images/item-14.webp",
+      "inStock": true,
+      "rating": 4.7
+    },
+    {
+      "id": 15,
+      "name": "Athletic Sneaker Collection",
+      "category": "Shoes",
+      "price": 79000,
+      "description": "Colorful athletic sneakers in white, black, grey, pink, and yellow. Comfortable and stylish.",
+      "image": "images/item-15.webp",
+      "inStock": true,
+      "rating": 4.5
+    },
+    {
+      "id": 16,
+      "name": "Round Metal Frame Sunglasses",
+      "category": "Accessories",
+      "price": 55000,
+      "description": "Classic round sunglasses with gold metal frame and dark lenses. Timeless style.",
+      "image": "images/item-16.webp",
+      "inStock": true,
+      "rating": 4.4
+    },
+    {
+      "id": 17,
+      "name": "Wide Brim Straw Hat",
+      "category": "Accessories",
+      "price": 42000,
+      "description": "Natural straw sun hat with wide brim and navy grosgrain ribbon band. Perfect sun protection.",
+      "image": "images/item-17.webp",
+      "inStock": true,
+      "rating": 4.6
+    },
+    {
+      "id": 18,
+      "name": "Double-Breasted Wool Coat",
+      "category": "Clothing",
+      "price": 285000,
+      "description": "Forest green wool blend coat with double-breasted button closure. Elegant and warm.",
+      "image": "images/item-18.webp",
+      "inStock": false,
+      "rating": 4.9
+    },
+    {
+      "id": 19,
+      "name": "Patent Leather T-Strap Heels",
+      "category": "Shoes",
+      "price": 115000,
+      "description": "Black patent leather pumps with T-strap ankle detail. Classic pointed toe and stiletto heel.",
+      "image": "images/item-19.webp",
+      "inStock": true,
+      "rating": 4.5
+    },
+    {
+      "id": 20,
+      "name": "Sapphire Statement Jewelry Set",
+      "category": "Jewelry",
+      "price": 325000,
+      "description": "Luxurious gold-tone jewelry set with blue sapphire cabochons, crystal halos, and elegant design.",
+      "image": "images/item-20.webp",
+      "inStock": true,
+      "rating": 5.0
+    }
+  ]
+}

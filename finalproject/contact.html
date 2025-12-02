@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Get in touch with Debby's Fashion Collection. Contact us for inquiries, orders, or customer support.">
+  <meta name="author" content="Okolocha Deborah">
+  <meta property="og:title" content="Contact Us - Debby's Fashion Collection">
+  <meta property="og:description" content="Get in touch with Debby's Fashion Collection for inquiries and support.">
+  <meta property="og:image" content="images/contact-hero.webp">
+  <meta property="og:url" content="https://debbilicious.github.io/wdd231/final/contact.html">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+  
+    <title>Contact - Debby's Fashion Collection</title>
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="styles/styles.css">
+
+  <script src="scripts/main.js" type="module"></script>
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <img src="images/dfc-logo.webp" alt="Debby's Fashion Collection Logo" width="50" height="50">
+      </div>
+      <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav>
+        <ul>
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="gallery.html">GALLERY</a></li>
+          <li><a href="about.html">ABOUT</a></li>
+          <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <img src="images/contact-hero.webp" alt="Contact page hero image" loading="lazy">
+      <div class="hero-text">
+        <h1>Get In Touch</h1>
+        <p>We would love to hear from you</p>
+      </div>
+    </section>
+
+    <!-- Contact Content -->
+    <section class="contact-content">
+      <div class="contact-info">
+        <h2>Contact Information</h2>
+        <div class="info-item">
+          <h3>Phone</h3>
+          <p>+234 705 242 2464</p>
+        </div>
+        <div class="info-item">
+          <h3>Email</h3>
+          <p>info@debbyfashion.com</p>
+        </div>
+        <div class="info-item">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/DebbyOkolocha" target="_blank" rel="noopener"><img src="images/facebook.svg" alt="Facebook" width="40" height="40" loading="lazy"></a>
+            <a href="https://x.com/debbilicious23" target="_blank" rel="noopener"><img src="images/twitter-x.svg" alt="X (Twitter)" width="40" height="40" loading="lazy"></a>
+            <a href="https://www.instagram.com/debby_white9" target="_blank" rel="noopener"><img src="images/instagram.svg" alt="Instagram" width="40" height="40" loading="lazy"></a>
+            <a href="https://wa.me/2347052422464" target="_blank" rel="noopener"><img src="images/whatsapp.svg" alt="WhatsApp" width="40" height="40" loading="lazy"></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form-container">
+        <h2>Send Us a Message</h2>
+        <form action="thankyou.html" method="get" id="contactForm">
+          <div class="form-group">
+            <label for="firstName">First Name <span class="required">*</span></label>
+            <input type="text" id="firstName" name="firstName" autocomplete="given-name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="lastName">Last Name <span class="required">*</span></label>
+            <input type="text" id="lastName" name="lastName" autocomplete="family-name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address <span class="required">*</span></label>
+            <input type="email" id="email" name="email" autocomplete="email" required>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel" pattern="[0-9+\-\s()]*">
+          </div>
+
+          <div class="form-group">
+            <label for="inquiryType">Inquiry Type <span class="required">*</span></label>
+            <select id="inquiryType" name="inquiryType" required>
+              <option value="">Select an option</option>
+              <option value="product">Product Inquiry</option>
+              <option value="order">Order Status</option>
+              <option value="shipping">Shipping & Delivery</option>
+              <option value="returns">Returns & Exchanges</option>
+              <option value="feedback">Feedback</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message <span class="required">*</span></label>
+            <textarea id="message" name="message" rows="6" required></textarea>
+          </div>
+
+          <div class="form-group checkbox-group">
+            <label>
+              <input type="checkbox" id="newsletter" name="newsletter" value="yes">
+              Subscribe to our newsletter for updates and special offers
+            </label>
+          </div>
+
+          <input type="hidden" id="timestamp" name="timestamp">
+          <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+
+        
+        <div class="footer-logo">
+            <img src="images/dfc-logo.webp" alt="Debby's Fashion Collection" width="60" height="60">
+        </div>
+
+        
+        <div class="footer-center-block">
+
+            <div class="footer-links-wrapper">
+                <!-- Catalogue -->
+                <div class="footer-section">
+                    <h3>Catalogue</h3>
+                    <ul>
+                        <li><a href="gallery.html">Women</a></li>
+                        <li><a href="gallery.html">Men</a></li>
+                        <li><a href="gallery.html">New Collection</a></li>
+                        <li><a href="gallery.html">Accessories</a></li>
+                        <li><a href="gallery.html">Sale</a></li>
+                    </ul>
+                </div>
+
+                <!-- Shop -->
+                <div class="footer-section">
+                    <h3>Shop</h3>
+                    <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Delivery</a></li>
+                        <li><a href="contact.html">Payment</a></li>
+                        <li><a href="contact.html">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>+234 705 242 2464</p>
+                    <p>info@debbyfashion.com</p>
+
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/DebbyOkolocha" target="_blank" rel="noopener">
+                            <img src="images/facebook.svg" alt="Facebook" width="32" height="32">
+                        </a>
+                        <a href="https://x.com/debbilicious23" target="_blank" rel="noopener">
+                            <img src="images/twitter-x.svg" alt="X (Twitter)" width="32" height="32">
+                        </a>
+                        <a href="https://www.instagram.com/debby_white9" target="_blank" rel="noopener">
+                            <img src="images/instagram.svg" alt="Instagram" width="32" height="32">
+                        </a>
+                        <a href="https://wa.me/2347052422464" target="_blank" rel="noopener">
+                            <img src="images/whatsapp.svg" alt="WhatsApp" width="32" height="32">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="footer-col-3">
+            <div class="footer-section">
+                <h3>Subscribe to our newsletter</h3>
+                <form class="newsletter-form" id="newsletterForm">
+                    <input type="email" id="newsletterEmail" name="email"
+                           autocomplete="email" placeholder="Your Email"
+                           required aria-label="Email address">
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+   
+    <div class="footer-bottom">
+        <p>&copy; 2025 Debby's Fashion Collection (DFC). All rights reserved.</p>
+        <p>Last Modified: <span id="lastModified"></span></p>
+        <p><a href="https://www.loom.com/share/54c888a738c04cc5a453bc567ff33d8a" target="_blank">View Project Demo Video</a></p>
+    </div>
+</footer>
+
+<!-- Modal -->
+  <div class="modal" id="productModal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+</body>
+</html>

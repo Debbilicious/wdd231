@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Browse our complete gallery of premium fashion items including clothing, shoes, accessories, and jewelry at Debby's Fashion Collection.">
+  <meta name="author" content="Okolocha Deborah">
+  <meta property="og:title" content="Gallery - Debby's Fashion Collection">
+  <meta property="og:description" content="Browse our complete gallery of premium fashion items at Debby's Fashion Collection.">
+  <meta property="og:image" content="images/gallery-hero.webp">
+  <meta property="og:url" content="https://debbilicious.github.io/wdd231/final/gallery.html">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+  
+    <title>Gallery - Debby's Fashion Collection</title>
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="styles/styles.css">
+
+  <script src="scripts/main.js" type="module"></script>
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <img src="images/dfc-logo.webp" alt="Debby's Fashion Collection Logo" width="50" height="50">
+      </div>
+      <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav>
+        <ul>
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="gallery.html">GALLERY</a></li>
+          <li><a href="about.html">ABOUT</a></li>
+          <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <img src="images/gallery-hero.webp" alt="Gallery hero image" loading="lazy">
+      <div class="hero-text">
+        <h1>Our Complete Collection</h1>
+        <p>Explore all 20 premium fashion items carefully curated for you</p>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+      <h2>Browse Our Collection</h2>
+      <div class="gallery-controls">
+        <div class="filter-buttons">
+          <button class="filter-btn" data-category="all">All (20)</button>
+          <button class="filter-btn" data-category="Clothing">Clothing</button>
+          <button class="filter-btn" data-category="Shoes">Shoes</button>
+          <button class="filter-btn" data-category="Accessories">Accessories</button>
+          <button class="filter-btn" data-category="Jewelry">Jewelry</button>
+        </div>
+        <div class="sort-controls">
+          <label for="sortSelect">Sort by:</label>
+          <select id="sortSelect">
+            <option value="default">Default</option>
+            <option value="price-low">Price: Low to High</option>
+            <option value="price-high">Price: High to Low</option>
+            <option value="name">Name A-Z</option>
+            <option value="rating">Highest Rated</option>
+          </select>
+        </div>
+      </div>
+      <div class="products-grid" id="galleryGrid">
+        <!-- Products load dynamically -->
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+
+        
+        <div class="footer-logo">
+            <img src="images/dfc-logo.webp" alt="Debby's Fashion Collection" width="60" height="60">
+        </div>
+
+        
+        <div class="footer-center-block">
+
+            <div class="footer-links-wrapper">
+                <!-- Catalogue -->
+                <div class="footer-section">
+                    <h3>Catalogue</h3>
+                    <ul>
+                        <li><a href="gallery.html">Women</a></li>
+                        <li><a href="gallery.html">Men</a></li>
+                        <li><a href="gallery.html">New Collection</a></li>
+                        <li><a href="gallery.html">Accessories</a></li>
+                        <li><a href="gallery.html">Sale</a></li>
+                    </ul>
+                </div>
+
+                <!-- Shop -->
+                <div class="footer-section">
+                    <h3>Shop</h3>
+                    <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Delivery</a></li>
+                        <li><a href="contact.html">Payment</a></li>
+                        <li><a href="contact.html">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>+234 705 242 2464</p>
+                    <p>info@debbyfashion.com</p>
+
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/DebbyOkolocha" target="_blank" rel="noopener">
+                            <img src="images/facebook.svg" alt="Facebook" width="32" height="32">
+                        </a>
+                        <a href="https://x.com/debbilicious23" target="_blank" rel="noopener">
+                            <img src="images/twitter-x.svg" alt="X (Twitter)" width="32" height="32">
+                        </a>
+                        <a href="https://www.instagram.com/debby_white9" target="_blank" rel="noopener">
+                            <img src="images/instagram.svg" alt="Instagram" width="32" height="32">
+                        </a>
+                        <a href="https://wa.me/2347052422464" target="_blank" rel="noopener">
+                            <img src="images/whatsapp.svg" alt="WhatsApp" width="32" height="32">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="footer-col-3">
+            <div class="footer-section">
+                <h3>Subscribe to our newsletter</h3>
+                <form class="newsletter-form" id="newsletterForm">
+                    <input type="email" id="newsletterEmail" name="email"
+                           autocomplete="email" placeholder="Your Email"
+                           required aria-label="Email address">
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    
+    <div class="footer-bottom">
+        <p>&copy; 2025 Debby's Fashion Collection (DFC). All rights reserved.</p>
+        <p>Last Modified: <span id="lastModified"></span></p>
+        <p><a href="https://www.loom.com/share/54c888a738c04cc5a453bc567ff33d8a" target="_blank">View Project Demo Video</a></p>
+    </div>
+</footer>
+
+<!-- Modal -->
+  <div class="modal" id="productModal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+</body>
+</html>
