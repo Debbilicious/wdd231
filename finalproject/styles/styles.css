@@ -196,7 +196,7 @@ nav a.active {
     margin-bottom: 2rem;
 }
 
-/* ADD THIS NEW SECTION HERE */
+
 .gallery-section h2 {
     text-align: center;
     font-size: 2.5rem;
@@ -512,11 +512,11 @@ nav a.active {
 .modal-details .product-description {
     font-size: 1.05rem;
     line-height: 1.8;
-    color: var(--dark-teal);
+    color: var(--burgundy);
 }
 
 .modal-details .product-rating span {
-    color: var(--dark-teal);
+    color: var(--burgundy);
     font-weight: 600;
 }
 
@@ -853,7 +853,7 @@ nav a.active {
     text-align: center;
 }
 
-/* ADD THESE NEW STYLES */
+
 .thankyou-section p,
 .thankyou-section strong {
     color: #000000;
